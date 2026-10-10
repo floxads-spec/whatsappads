@@ -1,607 +1,454 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <!-- Meta Pixel Code -->
 <script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1015235731603645');
-fbq('track', 'PageView');
+!function(f,b,e,v,n,t,s){
+  if(f.fbq)return;
+  n=f.fbq=function(){
+    n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments);
+  };
+  if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];
+  t=b.createElement(e);t.async=!0;t.src=v;
+  s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s);
+}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','1414231367484356');
+fbq('track','PageView');
 </script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1015235731603645&ev=PageView&noscript=1"
-/></noscript>
+<noscript>
+  <img height="1" width="1" style="display:none" alt=""
+    src="https://www.facebook.com/tr?id=1414231367484356&amp;ev=PageView&amp;noscript=1">
+</noscript>
 <!-- End Meta Pixel Code -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#05080a">
-  <title>Community Updates | Join on Telegram</title>
-  <meta name="description" content="Join our Telegram community for useful updates, announcements and fresh information.">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
 
-  <style>
-    :root{
-      --bg:#05080a;
-      --card:#0c1216;
-      --blue:#27a7e7;
-      --blue-light:#77d4ff;
-      --white:#ffffff;
-      --muted:#9aa8b2;
-      --line:rgba(255,255,255,.09);
-    }
+#thakur-page,
+#thakur-page *,
+#thakur-page *::before,
+#thakur-page *::after{
+  box-sizing:border-box;
+}
 
-    *{margin:0;padding:0;box-sizing:border-box}
-    html{scroll-behavior:smooth}
+#thakur-page{
+  position:relative;
+  isolation:isolate;
+  width:100%;
+  min-height:100vh;
+  min-height:100svh;
+  margin:0;
+  padding:35px 16px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  color:#fff;
+  font-family:'Poppins',sans-serif;
+  background:
+    radial-gradient(circle at 12% 15%,rgba(255,46,166,.32),transparent 34%),
+    radial-gradient(circle at 88% 80%,rgba(85,232,255,.28),transparent 38%),
+    linear-gradient(145deg,#020208,#0c0718 50%,#111004);
+}
 
-    body{
-      min-height:100vh;
-      overflow-x:hidden;
-      color:var(--white);
-      background:
-        radial-gradient(circle at 8% 8%,rgba(39,167,231,.16),transparent 28%),
-        radial-gradient(circle at 92% 58%,rgba(39,167,231,.10),transparent 30%),
-        var(--bg);
-      font-family:'Poppins',sans-serif;
-    }
+#thakur-page .tp-orb{
+  position:absolute;
+  width:280px;
+  height:280px;
+  border-radius:50%;
+  filter:blur(70px);
+  opacity:.34;
+  pointer-events:none;
+  animation:tp-orb 9s ease-in-out infinite alternate;
+}
+#thakur-page .tp-orb-one{
+  top:-140px;
+  right:-140px;
+  background:#ff2ea6;
+}
+#thakur-page .tp-orb-two{
+  left:-140px;
+  bottom:-140px;
+  background:#55e8ff;
+  animation-delay:-4s;
+}
 
-    a{text-decoration:none;color:inherit;-webkit-tap-highlight-color:transparent}
+#thakur-page .tp-grid{
+  position:absolute;
+  inset:0;
+  opacity:.09;
+  pointer-events:none;
+  background-image:
+    linear-gradient(rgba(255,255,255,.2) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.2) 1px,transparent 1px);
+  background-size:43px 43px;
+  animation:tp-grid 12s linear infinite;
+}
 
-    .page{
-      position:relative;
-      isolation:isolate;
-      min-height:100vh;
-      overflow:hidden;
-      padding-bottom:94px;
-    }
+#thakur-page .tp-card{
+  position:relative;
+  z-index:1;
+  width:100%;
+  max-width:390px;
+  min-width:0;
+  padding:36px 17px 22px;
+  border:1px solid rgba(255,255,255,.11);
+  border-radius:27px;
+  text-align:center;
+  background:rgba(8,7,16,.88);
+  box-shadow:
+    0 25px 70px rgba(0,0,0,.48),
+    inset 0 1px 0 rgba(255,255,255,.07);
+  animation:tp-entry .8s ease-out;
+}
 
-    .page::before{
-      content:"";
-      position:fixed;
-      inset:0;
-      z-index:-2;
-      opacity:.16;
-      background-image:
-        linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),
-        linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);
-      background-size:44px 44px;
-      mask-image:linear-gradient(to bottom,#000,transparent 88%);
-      animation:gridMove 14s linear infinite;
-    }
+@supports (backdrop-filter:blur(15px)){
+  #thakur-page .tp-card{
+    background:rgba(8,7,16,.65);
+    backdrop-filter:blur(15px);
+  }
+}
 
-    .glow{
-      position:fixed;
-      z-index:-1;
-      width:380px;
-      height:380px;
-      border-radius:50%;
-      background:rgba(39,167,231,.09);
-      filter:blur(75px);
-      pointer-events:none;
-      animation:glowFloat 8s ease-in-out infinite alternate;
-    }
+#thakur-page .tp-profile{
+  position:relative;
+  width:120px;
+  height:120px;
+  margin:0 auto 22px;
+  padding:4px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#00c6fb,#55e8ff,#fff);
+  box-shadow:
+    0 0 0 8px rgba(255,255,255,.05),
+    0 0 35px rgba(139,77,255,.35);
+  animation:tp-float 3s ease-in-out infinite;
+}
 
-    .glow-one{top:-140px;right:-140px}
-    .glow-two{bottom:4%;left:-210px;animation-delay:-4s}
-    .container{width:min(1120px,calc(100% - 32px));margin:auto}
+#thakur-page .tp-profile::after{
+  content:"";
+  position:absolute;
+  inset:-12px;
+  border:1px solid rgba(85,232,255,.3);
+  border-radius:50%;
+  pointer-events:none;
+  animation:tp-pulse 2s ease-out infinite;
+}
 
-    .nav{
-      min-height:78px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      border-bottom:1px solid rgba(255,255,255,.06);
-    }
+#thakur-page .tp-photo{
+  position:relative;
+  z-index:1;
+  display:block;
+  width:100%;
+  height:100%;
+  max-width:none;
+  margin:0;
+  object-fit:cover;
+  object-position:center 25%;
+  border:4px solid #080711;
+  border-radius:50%;
+}
 
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:11px;
-      font-size:16px;
-      font-weight:800;
-      letter-spacing:.4px;
-    }
+#thakur-page .tp-crown{
+  position:absolute;
+  z-index:2;
+  top:-29px;
+  left:50%;
+  transform:translateX(-50%);
+  color:#55e8ff;
+  font-size:39px;
+  line-height:1;
+  text-shadow:0 0 16px rgba(85,232,255,.8);
+}
 
-    .brand-icon{
-      width:41px;
-      height:41px;
-      display:grid;
-      place-items:center;
-      border:1px solid rgba(39,167,231,.35);
-      border-radius:13px;
-      color:#ffffff;
-      background:linear-gradient(135deg,#33b8f4,#168bc5);
-      box-shadow:0 0 28px rgba(39,167,231,.18);
-    }
+#thakur-page .tp-online{
+  position:absolute;
+  z-index:2;
+  right:7px;
+  bottom:8px;
+  width:21px;
+  height:21px;
+  border:4px solid #080711;
+  border-radius:50%;
+  background:#55e8ff;
+  box-shadow:0 0 15px rgba(85,232,255,.85);
+}
 
-    .brand-icon svg{width:22px;height:22px;fill:currentColor}
-    .nav-text{color:#81909a;font-size:9px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase}
+#thakur-page .tp-badge{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+  margin:0 0 14px;
+  padding:7px 14px;
+  border:1px solid rgba(85,232,255,.28);
+  border-radius:999px;
+  color:#ffe588;
+  background:rgba(244,197,66,.07);
+  font-size:9px;
+  font-weight:700;
+  line-height:1.5;
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
 
-    .hero{
-      min-height:670px;
-      display:grid;
-      grid-template-columns:1.08fr .92fr;
-      align-items:center;
-      gap:55px;
-      padding:65px 0 82px;
-    }
+#thakur-page .tp-dot{
+  flex:0 0 7px;
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:#55e8ff;
+  box-shadow:0 0 11px #55e8ff;
+  animation:tp-blink 1.2s ease-in-out infinite;
+}
 
-    .tag{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:8px 13px;
-      color:var(--blue-light);
-      background:rgba(39,167,231,.07);
-      border:1px solid rgba(39,167,231,.25);
-      border-radius:999px;
-      font-size:10px;
-      font-weight:700;
-      letter-spacing:1.1px;
-      text-transform:uppercase;
-    }
+#thakur-page .tp-title{
+  margin:0 0 12px;
+  padding:0;
+  color:#fff;
+  font-family:'Poppins',sans-serif;
+  font-size:clamp(28px,8.5vw,43px);
+  font-weight:900;
+  line-height:1.12;
+  letter-spacing:-1.4px;
+  text-align:center;
+  text-transform:uppercase;
+  overflow-wrap:anywhere;
+}
 
-    .dot{
-      width:7px;
-      height:7px;
-      border-radius:50%;
-      background:var(--blue);
-      box-shadow:0 0 12px var(--blue);
-      animation:pulse 1.5s infinite;
-    }
+#thakur-page .tp-title span{
+  display:block;
+  color:#55e8ff;
+}
 
-    h1{
-      max-width:720px;
-      margin:20px 0 18px;
-      font-size:clamp(48px,6.4vw,86px);
-      line-height:.99;
-      letter-spacing:-3px;
-      font-weight:800;
-    }
+@supports (-webkit-background-clip:text) or (background-clip:text){
+  #thakur-page .tp-title span{
+    background:linear-gradient(90deg,#eaffff,#55e8ff,#ff4cc4);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+}
 
-    h1 span{
-      display:block;
-      color:transparent;
-      background:linear-gradient(90deg,var(--blue),var(--blue-light));
-      -webkit-background-clip:text;
-      background-clip:text;
-    }
+#thakur-page .tp-description{
+  max-width:335px;
+  margin:0 auto 21px;
+  padding:0;
+  color:rgba(255,255,255,.68);
+  font-size:12.5px;
+  font-weight:400;
+  line-height:1.65;
+}
 
-    .lead{
-      max-width:650px;
-      color:var(--muted);
-      font-size:15px;
-      line-height:1.8;
-    }
+#thakur-page .tp-button{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  width:100%;
+  max-width:312px;
+  min-height:53px;
+  margin:0 auto;
+  padding:15px 12px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.55);
+  border-radius:999px;
+  color:#fff;
+  background:linear-gradient(90deg,#005bea,#00b9ef,#ff2ea6);
+  box-shadow:0 15px 38px rgba(111,53,220,.34);
+  font-family:'Poppins',sans-serif;
+  font-size:12px;
+  font-weight:700;
+  line-height:1.5;
+  letter-spacing:.3px;
+  text-align:center;
+  text-decoration:none;
+  text-transform:uppercase;
+  cursor:pointer;
+  transition:transform .3s ease,box-shadow .3s ease;
+}
 
-    .actions{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:29px}
+#thakur-page .tp-button::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:-120%;
+  width:60%;
+  height:100%;
+  transform:skewX(-25deg);
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.5),transparent);
+  pointer-events:none;
+  animation:tp-shine 3s ease-in-out infinite;
+}
 
-    .btn{
-      position:relative;
-      min-height:57px;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      padding:0 25px;
-      overflow:hidden;
-      color:#ffffff;
-      background:linear-gradient(135deg,#32b5f2,#168bc5);
-      border:1px solid rgba(255,255,255,.20);
-      border-radius:14px;
-      box-shadow:0 15px 40px rgba(39,167,231,.22);
-      font-size:13px;
-      font-weight:700;
-      transition:transform .28s ease,box-shadow .28s ease;
-    }
+#thakur-page .tp-button svg{
+  position:relative;
+  z-index:1;
+  flex:0 0 21px;
+  width:21px;
+  height:21px;
+}
+#thakur-page .tp-button span{
+  position:relative;
+  z-index:1;
+}
+#thakur-page .tp-button:focus-visible{
+  outline:3px solid #55e8ff;
+  outline-offset:5px;
+}
+#thakur-page .tp-button:active{
+  transform:scale(.97);
+}
 
-    .btn::after{
-      content:"";
-      position:absolute;
-      inset:0;
-      transform:translateX(-125%) skewX(-20deg);
-      background:linear-gradient(90deg,transparent,rgba(255,255,255,.42),transparent);
-      transition:transform .7s ease;
-    }
+#thakur-page .tp-notice{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  width:100%;
+  margin:19px auto 0;
+  padding:10px;
+  border:1px solid rgba(244,197,66,.14);
+  border-radius:12px;
+  color:rgba(255,255,255,.62);
+  background:rgba(255,255,255,.035);
+  text-align:left;
+  font-size:9.5px;
+  line-height:1.5;
+}
+#thakur-page .tp-age{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex:0 0 34px;
+  height:34px;
+  border:2px solid #55e8ff;
+  border-radius:50%;
+  color:#fff;
+  font-size:10px;
+  font-weight:800;
+}
+#thakur-page .tp-brand{
+  margin:22px 0 0;
+  color:rgba(255,255,255,.4);
+  font-size:9px;
+  font-weight:600;
+  line-height:1.5;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+#thakur-page .tp-brand strong{
+  color:#55e8ff;
+  font-weight:800;
+}
 
-    .btn:hover{transform:translateY(-4px);box-shadow:0 20px 52px rgba(39,167,231,.38)}
-    .btn:hover::after{transform:translateX(125%) skewX(-20deg)}
-    .btn svg{width:21px;height:21px;fill:currentColor}
-    .micro{color:#71808a;font-size:10px}
+@keyframes tp-orb{
+  to{transform:translate(45px,35px) scale(1.15)}
+}
+@keyframes tp-grid{
+  to{background-position:0 86px}
+}
+@keyframes tp-entry{
+  from{opacity:0;transform:translateY(22px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@keyframes tp-float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-7px)}
+}
+@keyframes tp-pulse{
+  from{transform:scale(.9);opacity:.78}
+  to{transform:scale(1.2);opacity:0}
+}
+@keyframes tp-blink{
+  50%{opacity:.3}
+}
+@keyframes tp-shine{
+  0%,35%{left:-120%}
+  70%,100%{left:150%}
+}
 
-    .visual{position:relative;display:grid;place-items:center}
+@media(hover:hover){
+  #thakur-page .tp-button:hover{
+    transform:translateY(-3px);
+    box-shadow:0 20px 48px rgba(111,53,220,.48);
+  }
+}
 
-    .orbit{
-      position:absolute;
-      width:390px;
-      height:390px;
-      border:1px solid rgba(39,167,231,.13);
-      border-radius:50%;
-      animation:spin 20s linear infinite;
-    }
+@media(max-width:350px){
+  #thakur-page{padding:28px 10px}
+  #thakur-page .tp-card{padding:34px 12px 20px}
+  #thakur-page .tp-title{font-size:28px}
+  #thakur-page .tp-button{font-size:10.5px}
+}
 
-    .orbit::before,.orbit::after{
-      content:"";
-      position:absolute;
-      border-radius:50%;
-      background:var(--blue);
-      box-shadow:0 0 18px var(--blue);
-    }
+@media(max-height:690px){
+  #thakur-page{padding-top:25px;padding-bottom:25px}
+  #thakur-page .tp-profile{width:100px;height:100px}
+  #thakur-page .tp-brand{margin-top:16px}
+}
 
-    .orbit::before{width:8px;height:8px;top:34px;left:68px}
-    .orbit::after{width:6px;height:6px;right:24px;bottom:96px;background:var(--blue-light)}
+@media(prefers-reduced-motion:reduce){
+  #thakur-page *,
+  #thakur-page *::before,
+  #thakur-page *::after{
+    animation:none!important;
+    transition:none!important;
+  }
+}
+</style>
 
-    .phone{
-      position:relative;
-      width:285px;
-      min-height:505px;
-      padding:10px;
-      border:1px solid rgba(255,255,255,.16);
-      border-radius:38px;
-      background:linear-gradient(145deg,#1e272d,#080b0d);
-      box-shadow:0 35px 80px rgba(0,0,0,.55),0 0 60px rgba(39,167,231,.08);
-      transform:rotate(3deg);
-      animation:phoneFloat 4s ease-in-out infinite;
-    }
+<section id="thakur-page" aria-label="Thakur Prediction">
+  <div class="tp-orb tp-orb-one" aria-hidden="true"></div>
+  <div class="tp-orb tp-orb-two" aria-hidden="true"></div>
+  <div class="tp-grid" aria-hidden="true"></div>
 
-    .screen{
-      min-height:483px;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
-      padding:28px 21px;
-      overflow:hidden;
-      text-align:center;
-      border-radius:30px;
-      background:radial-gradient(circle at top,rgba(39,167,231,.22),transparent 40%),#070b0d;
-    }
-
-    .screen-icon{
-      width:88px;
-      height:88px;
-      display:grid;
-      place-items:center;
-      color:#ffffff;
-      background:linear-gradient(135deg,#35bdfb,#168bc5);
-      border-radius:26px;
-      box-shadow:0 16px 45px rgba(39,167,231,.27);
-    }
-
-    .screen-icon svg{width:47px;height:47px;fill:currentColor}
-    .screen h2{margin-top:24px;font-size:27px;line-height:1.15}
-    .screen p{margin:12px 0 22px;color:#98a6af;font-size:12px;line-height:1.7}
-
-    .screen-pill{
-      width:100%;
-      padding:13px 14px;
-      color:var(--blue-light);
-      background:rgba(39,167,231,.09);
-      border:1px solid rgba(39,167,231,.20);
-      border-radius:12px;
-      font-size:10px;
-      font-weight:700;
-      letter-spacing:.5px;
-    }
-
-    .section{padding:84px 0}
-    .section-head{max-width:690px;margin:0 auto 38px;text-align:center}
-    .eyebrow{color:var(--blue);font-size:10px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase}
-
-    .section h2{
-      margin-top:10px;
-      font-size:clamp(30px,4vw,47px);
-      line-height:1.13;
-      letter-spacing:-1.4px;
-    }
-
-    .section-head p{margin-top:13px;color:var(--muted);font-size:13px;line-height:1.75}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-
-    .card{
-      position:relative;
-      padding:27px 23px;
-      overflow:hidden;
-      background:linear-gradient(145deg,rgba(255,255,255,.045),rgba(255,255,255,.012));
-      border:1px solid var(--line);
-      border-radius:18px;
-      transition:transform .3s ease,border-color .3s ease,background .3s ease;
-    }
-
-    .card::before{
-      content:"";
-      position:absolute;
-      top:0;
-      left:0;
-      width:0;
-      height:2px;
-      background:linear-gradient(90deg,var(--blue),var(--blue-light));
-      transition:width .35s ease;
-    }
-
-    .card:hover{transform:translateY(-7px);border-color:rgba(39,167,231,.32);background:rgba(39,167,231,.05)}
-    .card:hover::before{width:100%}
-
-    .card-icon{
-      width:46px;
-      height:46px;
-      display:grid;
-      place-items:center;
-      color:var(--blue);
-      background:rgba(39,167,231,.10);
-      border-radius:13px;
-    }
-
-    .card-icon svg{width:23px;height:23px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
-    .card h3{margin:18px 0 8px;font-size:17px}
-    .card p{color:var(--muted);font-size:12px;line-height:1.72}
-
-    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;counter-reset:step}
-
-    .step{
-      counter-increment:step;
-      padding:25px;
-      background:var(--card);
-      border:1px solid var(--line);
-      border-radius:18px;
-      transition:transform .3s ease,border-color .3s ease;
-    }
-
-    .step:hover{transform:translateY(-5px);border-color:rgba(39,167,231,.30)}
-    .step::before{content:"0" counter(step);display:block;margin-bottom:18px;color:var(--blue);font-size:12px;font-weight:700;letter-spacing:1px}
-    .step h3{margin-bottom:7px;font-size:17px}
-    .step p{color:var(--muted);font-size:12px;line-height:1.68}
-
-    .cta{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:28px;
-      padding:42px;
-      background:radial-gradient(circle at 90% 20%,rgba(39,167,231,.17),transparent 38%),#0a1014;
-      border:1px solid rgba(39,167,231,.23);
-      border-radius:24px;
-      box-shadow:0 30px 70px rgba(0,0,0,.25);
-    }
-
-    .cta h2{font-size:clamp(27px,4vw,42px)}
-    .cta p{margin-top:8px;color:var(--muted);font-size:12px}
-
-    footer{
-      padding:31px 0 38px;
-      color:#7c8991;
-      border-top:1px solid var(--line);
-      text-align:center;
-      font-size:10px;
-      font-weight:600;
-      letter-spacing:2px;
-    }
-
-    .sticky{display:none}
-    .reveal{opacity:0;transform:translateY(27px);transition:opacity .7s ease,transform .7s ease}
-    .reveal.show{opacity:1;transform:none}
-
-    @keyframes pulse{50%{opacity:.35;transform:scale(.75)}}
-    @keyframes spin{to{transform:rotate(360deg)}}
-    @keyframes gridMove{to{background-position:44px 44px}}
-    @keyframes glowFloat{to{transform:translate(60px,60px) scale(1.18)}}
-    @keyframes phoneFloat{50%{transform:rotate(1deg) translateY(-11px)}}
-
-    @media(max-width:900px){
-      .hero{grid-template-columns:1fr;min-height:auto;gap:42px;padding:55px 0 72px;text-align:center}
-      .hero-copy{display:flex;flex-direction:column;align-items:center}
-      h1{letter-spacing:-2.3px}
-      .visual{margin-top:16px}
-      .grid,.steps{grid-template-columns:repeat(2,1fr)}
-    }
-
-    @media(max-width:620px){
-      .page{padding-bottom:92px}
-      .container{width:min(100% - 24px,520px)}
-      .nav{min-height:68px}
-      .brand{font-size:13px}
-      .brand-icon{width:37px;height:37px;border-radius:11px}
-      .nav-text{font-size:7px;letter-spacing:1px}
-      .hero{gap:35px;padding:43px 0 60px}
-      h1{margin:17px 0 15px;font-size:46px;letter-spacing:-1.9px}
-      .lead{font-size:12px;line-height:1.75}
-      .actions{width:100%;margin-top:24px}
-      .actions .btn{width:100%}
-      .micro{width:100%}
-      .orbit{width:315px;height:315px}
-      .phone{width:250px;min-height:443px}
-      .screen{min-height:421px}
-      .screen h2{font-size:24px}
-      .section{padding:64px 0}
-      .section-head{margin-bottom:26px}
-      .section h2{font-size:30px}
-      .section-head p{font-size:11px}
-      .grid,.steps{grid-template-columns:1fr;gap:11px}
-      .card,.step{padding:21px}
-      .card:hover,.step:hover{transform:translateY(-3px)}
-      .cta{flex-direction:column;padding:30px 21px;text-align:center}
-      .cta .btn{width:100%}
-      .sticky{
-        position:fixed;
-        z-index:99;
-        left:12px;
-        right:12px;
-        bottom:12px;
-        display:flex;
-        padding:7px;
-        background:rgba(7,11,13,.84);
-        border:1px solid rgba(255,255,255,.13);
-        border-radius:17px;
-        box-shadow:0 12px 35px rgba(0,0,0,.45);
-        backdrop-filter:blur(14px);
-      }
-      .sticky .btn{width:100%;min-height:54px;border-radius:12px}
-    }
-
-    @media(prefers-reduced-motion:reduce){
-      *{scroll-behavior:auto!important;animation:none!important;transition:none!important}
-      .reveal{opacity:1;transform:none}
-    }
-  </style>
-</head>
-
-<body>
-  <main class="page">
-    <div class="glow glow-one"></div>
-    <div class="glow glow-two"></div>
-
-    <div class="container">
-      <nav class="nav">
-        <a class="brand" href="#top" aria-label="Community home">
-          <span class="brand-icon">
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M21.7 3.2c-.25-.22-.65-.27-1.06-.11L2.7 10c-.62.24-.98.58-.96.93.02.35.4.65 1.05.85l4.57 1.43 1.77 5.66c.17.54.45.85.8.88h.06c.34 0 .64-.24.9-.7l2.4-3.72 4.7 3.47c.4.3.8.4 1.14.25.34-.14.57-.5.66-1.01L22 4.24c.08-.47-.03-.82-.3-1.05ZM9.2 12.62l8.05-5.07-6.68 6.34-.53 2.5-.84-3.77Z"/>
-            </svg>
-          </span>
-          <span>COMMUNITY UPDATES</span>
-        </a>
-        <span class="nav-text">Stay Connected</span>
-      </nav>
-
-      <section class="hero" id="top">
-        <div class="hero-copy reveal">
-          <div class="tag"><span class="dot"></span> Community Update Channel</div>
-          <h1>STAY INFORMED. <span>STAY CONNECTED.</span></h1>
-          <p class="lead">Join our Telegram community to receive useful updates, important announcements and fresh information directly in one convenient place.</p>
-
-          <div class="actions">
-            <a class="btn" href="https://t.me/+1blBUkrLOzY4MWNl" target="_blank" rel="noopener noreferrer">
-              <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M21.7 3.2c-.25-.22-.65-.27-1.06-.11L2.7 10c-.62.24-.98.58-.96.93.02.35.4.65 1.05.85l4.57 1.43 1.77 5.66c.17.54.45.85.8.88h.06c.34 0 .64-.24.9-.7l2.4-3.72 4.7 3.47c.4.3.8.4 1.14.25.34-.14.57-.5.66-1.01L22 4.24c.08-.47-.03-.82-.3-1.05ZM9.2 12.62l8.05-5.07-6.68 6.34-.53 2.5-.84-3.77Z"/>
-              </svg>
-              JOIN TELEGRAM CHANNEL
-            </a>
-            <span class="micro">Opens directly in Telegram</span>
-          </div>
-        </div>
-
-        <div class="visual reveal">
-          <div class="orbit"></div>
-          <div class="phone">
-            <div class="screen">
-              <div class="screen-icon">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M21.7 3.2c-.25-.22-.65-.27-1.06-.11L2.7 10c-.62.24-.98.58-.96.93.02.35.4.65 1.05.85l4.57 1.43 1.77 5.66c.17.54.45.85.8.88h.06c.34 0 .64-.24.9-.7l2.4-3.72 4.7 3.47c.4.3.8.4 1.14.25.34-.14.57-.5.66-1.01L22 4.24c.08-.47-.03-.82-.3-1.05ZM9.2 12.62l8.05-5.07-6.68 6.34-.53 2.5-.84-3.77Z"/>
-                </svg>
-              </div>
-              <h2>COMMUNITY UPDATES</h2>
-              <p>Fresh information and announcements delivered directly to you.</p>
-              <div class="screen-pill">JOIN • CONNECT • STAY UPDATED</div>
-            </div>
-          </div>
-        </div>
-      </section>
+  <div class="tp-card">
+    <div class="tp-profile">
+      <span class="tp-crown" aria-hidden="true">♛</span>
+      <img
+        class="tp-photo"
+        src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&amp;fit=crop&amp;w=500&amp;h=500&amp;q=90"
+        alt="Woman portrait"
+        width="120"
+        height="120"
+      >
+      <span class="tp-online" aria-hidden="true"></span>
     </div>
 
-    <section class="section">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="eyebrow">Why Join</span>
-          <h2>Everything you need in one community</h2>
-          <p>Stay close to the latest information without searching across different platforms.</p>
-        </div>
-
-        <div class="grid">
-          <article class="card reveal">
-            <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9"/><path d="M12 7v5l3 2"/></svg></div>
-            <h3>Timely Updates</h3>
-            <p>Receive useful community information and important announcements at the right time.</p>
-          </article>
-
-          <article class="card reveal">
-            <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M8 18h8"/><path d="M10 21h4"/><path d="M12 3a6 6 0 0 0-4 10.5c.7.6 1 1.3 1 2.5h6c0-1.2.3-1.9 1-2.5A6 6 0 0 0 12 3Z"/></svg></div>
-            <h3>Fresh Information</h3>
-            <p>Discover new posts and helpful information shared regularly with the community.</p>
-          </article>
-
-          <article class="card reveal">
-            <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M8 12h8"/><path d="M12 8v8"/><circle cx="12" cy="12" r="9"/></svg></div>
-            <h3>Easy Access</h3>
-            <p>Join with one simple tap and access all community updates directly on Telegram.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="eyebrow">Simple Process</span>
-          <h2>Join in three easy steps</h2>
-        </div>
-
-        <div class="steps">
-          <div class="step reveal">
-            <h3>Tap the Button</h3>
-            <p>Select the Telegram button available on this page.</p>
-          </div>
-          <div class="step reveal">
-            <h3>Open Telegram</h3>
-            <p>The community invitation will open in your Telegram app.</p>
-          </div>
-          <div class="step reveal">
-            <h3>Join the Community</h3>
-            <p>Confirm your access and start receiving community updates.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="cta reveal">
-          <div>
-            <span class="eyebrow">Ready to connect?</span>
-            <h2>Join our Telegram community</h2>
-            <p>Stay connected and never miss a new community update.</p>
-          </div>
-          <a class="btn" href="https://t.me/+1blBUkrLOzY4MWNl" target="_blank" rel="noopener noreferrer">JOIN NOW</a>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      <div class="container">FLOX ADS</div>
-    </footer>
-
-    <div class="sticky">
-      <a class="btn" https://t.me/+1blBUkrLOzY4MWNl" target="_blank" rel="noopener noreferrer">
-        <svg viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M21.7 3.2c-.25-.22-.65-.27-1.06-.11L2.7 10c-.62.24-.98.58-.96.93.02.35.4.65 1.05.85l4.57 1.43 1.77 5.66c.17.54.45.85.8.88h.06c.34 0 .64-.24.9-.7l2.4-3.72 4.7 3.47c.4.3.8.4 1.14.25.34-.14.57-.5.66-1.01L22 4.24c.08-.47-.03-.82-.3-1.05ZM9.2 12.62l8.05-5.07-6.68 6.34-.53 2.5-.84-3.77Z"/>
-        </svg>
-        JOIN TELEGRAM
-      </a>
+    <div class="tp-badge">
+      <span class="tp-dot" aria-hidden="true"></span>
+      Royal VIP Community
     </div>
-  </main>
 
-  <script>
-    const items=document.querySelectorAll('.reveal');
-    const observer=new IntersectionObserver((entries)=>{
-      entries.forEach((entry)=>{
-        if(entry.isIntersecting){
-          entry.target.classList.add('show');
-          observer.unobserve(entry.target);
-        }
-      });
-    },{threshold:.13});
+    <h1 class="tp-title">
+      THAKUR
+      <span>PREDICTION</span>
+    </h1>
 
-    items.forEach((item,index)=>{
-      item.style.transitionDelay=(index%3)*90+'ms';
-      observer.observe(item);
-    });
-  </script>
-</body>
-</html>
+    <p class="tp-description">
+      Join our community for exclusive updates, announcements and premium community content.
+    </p>
+
+    <a
+      class="tp-button"
+      href="https://t.me/+hfWtDw85PegwZTM1"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M21.8 2.2c-.3-.2-.7-.3-1.1-.1L2.1 9.3c-.7.3-.8 1.2-.1 1.6l4.7 2.3 1.8 5.6c.2.7 1.1.9 1.6.4l2.6-2.5 4.8 3.5c.6.4 1.4.1 1.5-.6l3.1-16.4c.1-.4 0-.8-.3-1ZM9.3 13.5l8.4-7.4-6.5 8.3-.5 2.5-1.4-3.4Z"/>
+      </svg>
+      <span>Join Telegram Channel</span>
+    </a>
+
+    <div class="tp-notice">
+      <span class="tp-age">18+</span>
+      <span>
+        This community is intended only for users aged 18 years or above.
+        Please join and participate responsibly.
+      </span>
+    </div>
+
+    <p class="tp-brand">Designed by <strong>FLOX ADS</strong></p>
+  </div>
+</section>
