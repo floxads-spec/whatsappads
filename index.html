@@ -1,14 +1,33 @@
 
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
 <div id="color-mobile">
 
 <style>
-#color-mobile {
-  width:100% !important;
-  max-width:100% !important;
-  min-width:0 !important;
+html, body {
   margin:0 !important;
+  padding:0 !important;
+  width:100% !important;
+  min-height:100% !important;
+  background:#080b10 !important;
+  overflow-x:hidden !important;
+}
+
+#page, #content, .site, .site-content,
+.content-area, .site-main, .entry-content,
+.wp-site-blocks, .dslc-main {
+  background:#080b10 !important;
+  margin:0 !important;
+  padding:0 !important;
+  max-width:100% !important;
+  width:100% !important;
+}
+
+#color-mobile {
+  width:100vw !important;
+  max-width:none !important;
+  min-width:0 !important;
+  min-height:100vh;
+  min-height:100dvh;
+  margin:0 0 0 calc(50% - 50vw) !important;
   padding:0 !important;
   position:relative;
   overflow:hidden !important;
@@ -16,7 +35,7 @@
   background:#080b10;
   color:#fff;
   font-family:Arial,Helvetica,sans-serif;
-  border-radius:12px;
+  border-radius:0 !important;
   isolation:isolate;
 }
 
@@ -52,11 +71,13 @@
   z-index:-1;
   pointer-events:none;
 }
+
 #color-mobile .glow1 {
   background:#f4c542;
   top:100px;
   left:-70px;
 }
+
 #color-mobile .glow2 {
   background:#20d879;
   bottom:100px;
@@ -106,7 +127,10 @@
   letter-spacing:.5px;
   white-space:nowrap;
 }
-#color-mobile .brand-name span {color:#f4c542}
+
+#color-mobile .brand-name span {
+  color:#f4c542;
+}
 
 #color-mobile .age {
   padding:6px 9px;
@@ -198,36 +222,69 @@
   font-size:10px;
   white-space:nowrap;
 }
-#color-mobile .feature span {color:#f4c542}
 
-#color-mobile .wa {
+#color-mobile .feature span {
+  color:#f4c542;
+}
+
+/* FIXED WHATSAPP BUTTON */
+#color-mobile a.wa {
   display:flex !important;
   width:100% !important;
-  min-height:53px;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-  padding:14px 12px;
-  border-radius:9px;
-  background:linear-gradient(135deg,#39e991,#12bd6d);
+  max-width:390px !important;
+  min-height:58px !important;
+  margin:25px auto 0 !important;
+  padding:15px 18px !important;
+
+  align-items:center !important;
+  justify-content:center !important;
+  gap:11px !important;
+
+  border:0 !important;
+  border-radius:12px !important;
+  background:linear-gradient(135deg,#39e991,#12bd6d) !important;
+
   color:#04160c !important;
-  font-size:14px;
-  font-weight:900;
+  font-family:Arial,Helvetica,sans-serif !important;
+  font-size:14px !important;
+  font-weight:900 !important;
+  line-height:1.2 !important;
+  letter-spacing:.5px !important;
+  text-align:center !important;
   text-decoration:none !important;
-  box-shadow:0 5px 25px #20d87935;
+  text-transform:uppercase !important;
+
+  box-shadow:0 5px 25px #20d87935 !important;
   animation:cm-attention 3s infinite;
-  transition:.25s;
+  transition:transform .25s ease,box-shadow .25s ease;
+  cursor:pointer;
+}
+
+#color-mobile a.wa:hover {
+  color:#04160c !important;
+  background:linear-gradient(135deg,#65f5aa,#20d879) !important;
+  transform:translateY(-3px);
+  text-decoration:none !important;
+}
+
+#color-mobile a.wa:visited,
+#color-mobile a.wa:active,
+#color-mobile a.wa:focus {
+  color:#04160c !important;
+  text-decoration:none !important;
+}
+
+#color-mobile .wa svg {
+  width:23px !important;
+  height:23px !important;
+  min-width:23px;
+  display:block;
+  flex-shrink:0;
 }
 
 @keyframes cm-attention {
   0%,80%,100% {box-shadow:0 5px 20px #20d87925}
   90% {box-shadow:0 5px 28px #20d87975}
-}
-
-#color-mobile .wa svg {
-  width:21px;
-  height:21px;
-  flex-shrink:0;
 }
 
 #color-mobile .trust {
@@ -240,7 +297,9 @@
   font-size:10px;
 }
 
-#color-mobile .trust span {color:#f4c542}
+#color-mobile .trust span {
+  color:#f4c542;
+}
 
 #color-mobile .footer {
   margin-top:45px;
@@ -252,14 +311,35 @@
   color:#929da6;
 }
 
-#color-mobile .footer strong {color:#f4c542}
+#color-mobile .footer strong {
+  color:#f4c542;
+}
 
 @media(max-width:380px) {
-  #color-mobile .inner {padding:17px 12px 22px !important}
-  #color-mobile .hero {padding-top:55px}
-  #color-mobile h1 {font-size:32px !important}
-  #color-mobile .feature {font-size:9px;padding:7px}
-  #color-mobile .brand-name {font-size:12px}
+  #color-mobile .inner {
+    padding:17px 12px 22px !important;
+  }
+
+  #color-mobile .hero {
+    padding-top:55px;
+  }
+
+  #color-mobile h1 {
+    font-size:32px !important;
+  }
+
+  #color-mobile .feature {
+    font-size:9px;
+    padding:7px;
+  }
+
+  #color-mobile .brand-name {
+    font-size:12px;
+  }
+
+  #color-mobile a.wa {
+    font-size:12px !important;
+  }
 }
 
 @media(min-width:700px) {
@@ -267,16 +347,15 @@
     max-width:720px !important;
     padding:30px 25px 35px !important;
   }
-  #color-mobile .hero {padding-top:85px}
-  #color-mobile .wa {
-    width:auto !important;
-    min-width:280px;
-    margin:auto;
+
+  #color-mobile .hero {
+    padding-top:85px;
   }
 }
 
 @media(prefers-reduced-motion:reduce) {
-  #color-mobile *,#color-mobile *:before {
+  #color-mobile *,
+  #color-mobile *:before {
     animation:none !important;
     transition:none !important;
   }
@@ -321,14 +400,18 @@
       <div class="feature"><span>✦</span> Information</div>
     </div>
 
-    
+    <!-- WHATSAPP BUTTON -->
+    <a class="wa"
+       href="https://wa.me/12496995236?text=Hello%2C%20I%20need%20assistance%20regarding%20my%20colour%20trading%20losses.%20Please%20share%20the%20available%20information."
+       target="_blank"
+       rel="noopener noreferrer">
 
-<a href="https://wa.me/12496995236?text=Hello%2C%20I%20need%20assistance%20regarding%20my%20colour%20trading%20losses.%20Please%20share%20the%20available%20information."
-   target="_blank"
-   rel="noopener noreferrer">
-   CONTACT ON WHATSAPP
-</a>
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M12.04 2a9.85 9.85 0 0 0-8.46 14.9L2.2 22l5.25-1.38A9.95 9.95 0 1 0 12.04 2zm0 18.18a8.2 8.2 0 0 1-4.18-1.14l-.3-.18-3.11.82.83-3.03-.2-.31a8.2 8.2 0 1 1 6.96 3.84zm4.5-6.14c-.25-.12-1.48-.73-1.71-.81-.23-.09-.4-.12-.56.12-.17.25-.64.81-.79.98-.15.16-.29.18-.54.06-.25-.12-1.05-.39-2-1.24-.74-.66-1.24-1.48-1.39-1.73-.15-.25-.02-.38.11-.5.11-.1.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.08 0 1.23.89 2.42 1.01 2.59.12.16 1.75 2.67 4.24 3.74.59.25 1.05.4 1.41.51.59.19 1.12.16 1.54.1.47-.07 1.48-.61 1.69-1.2.21-.6.21-1.11.15-1.22-.06-.11-.23-.18-.48-.31z"/>
+      </svg>
 
+      <span>CONTACT ON WHATSAPP</span>
+    </a>
 
     <div class="trust">
       <div>✓ <span>18+</span> Adults Only</div>
@@ -348,58 +431,3 @@
 
 </div>
 </div>
-<style>
-html,
-body {
-    margin: 0 !important;
-    padding: 0 !important;
-    width: 100% !important;
-    min-height: 100% !important;
-    background: #050505 !important;
-    overflow-x: hidden !important;
-}
-
-body,
-#page,
-.site,
-.site-content,
-.content-area,
-.site-main,
-.entry-content,
-.wp-site-blocks,
-.dslc-main {
-    background: #050505 !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    max-width: 100% !important;
-    width: 100% !important;
-}
-
-#color-mobile {
-    width: 100vw !important;
-    max-width: none !important;
-    min-height: 100vh !important;
-    margin: 0 !important;
-    padding: 20px 14px !important;
-    box-sizing: border-box !important;
-    background: #050505 !important;
-    border-radius: 0 !important;
-}
-
-#color-mobile * {
-    box-sizing: border-box;
-}
-
-@media (max-width: 767px) {
-    html, body {
-        background: #050505 !important;
-    }
-
-    #color-mobile {
-        width: 100vw !important;
-        min-height: 100dvh !important;
-        margin-left: calc(50% - 50vw) !important;
-        padding: 18px 14px !important;
-    }
-}
-</style>
