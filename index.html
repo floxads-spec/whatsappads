@@ -1,414 +1,380 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#080b0a">
-<title>Color Trading Support</title>
-
+<div id="color-mobile">
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
-
-#color-support,
-#color-support * {
-  box-sizing: border-box;
+html,body{
+  margin:0!important;
+  padding:0!important;
+  width:100%!important;
+  min-height:100%!important;
+  background:#080b10!important;
+  overflow-x:hidden!important;
 }
-
-html, body {
-  margin: 0 !important;
-  padding: 0 !important;
-  width: 100% !important;
-  min-height: 100% !important;
-  overflow-x: hidden !important;
+#page,#content,.site,.site-content,.content-area,
+.site-main,.entry-content,.wp-site-blocks,.dslc-main{
+  margin:0!important;
+  padding:0!important;
+  width:100%!important;
+  max-width:100%!important;
+  background:#080b10!important;
 }
-
-#color-support {
-  --gold: #f4c542;
-  --green: #20d58a;
-  width: 100vw;
-  max-width: 100vw;
-  min-height: 100svh;
-  margin-left: calc(50% - 50vw);
-  padding: 22px 18px 30px;
+#color-mobile,
+#color-mobile *{
+  box-sizing:border-box!important;
+}
+#color-mobile{
+  position:relative;
+  isolation:isolate;
+  width:100vw!important;
+  max-width:none!important;
+  min-height:100vh;
+  min-height:100dvh;
+  margin-left:calc(50% - 50vw)!important;
+  padding:0!important;
+  overflow:hidden!important;
+  background:#080b10!important;
+  color:#fff;
+  font-family:Arial,Helvetica,sans-serif;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+#color-mobile .bg{
+  position:absolute;
+  inset:0;
+  z-index:-2;
   background:
-    radial-gradient(ellipse at 50% 0%, rgba(244,197,66,.13), transparent 42%),
-    linear-gradient(180deg, #101713 0%, #080b0a 55%, #050706 100%);
-  color: #fff;
-  font-family: 'Inter', Arial, sans-serif;
-  overflow: hidden;
-  position: relative;
+    radial-gradient(circle at 10% 15%,#c99b3035,transparent 38%),
+    radial-gradient(circle at 90% 85%,#12b96b25,transparent 40%),
+    linear-gradient(145deg,#090d12,#151b20,#080b10);
+  background-size:200% 200%;
+  animation:cm-bg 12s ease infinite alternate;
 }
-
-#color-support .inner {
-  width: 100%;
-  max-width: 440px;
-  margin: 0 auto;
+@keyframes cm-bg{
+  to{background-position:100% 100%}
 }
-
-/* HEADER */
-#color-support .topbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  margin-bottom: 35px;
+#color-mobile .glow{
+  position:absolute;
+  width:140px;
+  height:140px;
+  border-radius:50%;
+  filter:blur(65px);
+  opacity:.3;
+  z-index:-1;
+  pointer-events:none;
 }
-
-#color-support .brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 17px;
-  font-weight: 900;
-  letter-spacing: .5px;
+#color-mobile .glow1{
+  background:#f4c542;
+  top:100px;
+  left:-70px;
 }
-
-#color-support .brand-icon {
-  width: 38px;
-  height: 38px;
-  display: grid;
-  place-items: center;
-  border-radius: 12px;
-  background: linear-gradient(145deg, #f8d96c, #c18b17);
-  color: #171207;
-  font-size: 19px;
-  font-weight: 900;
-  box-shadow: 0 5px 20px rgba(244,197,66,.18);
+#color-mobile .glow2{
+  background:#20d879;
+  bottom:100px;
+  right:-70px;
 }
-
-#color-support .age {
-  border: 1px solid rgba(244,197,66,.4);
-  color: var(--gold);
-  padding: 7px 11px;
-  border-radius: 30px;
-  font-size: 11px;
-  font-weight: 800;
-  white-space: nowrap;
+#color-mobile .inner{
+  width:100%;
+  max-width:430px;
+  padding:22px 17px 24px;
+  margin:auto;
 }
-
-/* HERO */
-#color-support .hero {
-  text-align: center;
-  padding: 5px 0 25px;
+#color-mobile .header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:8px;
+  padding-bottom:15px;
+  border-bottom:1px solid #ffffff20;
 }
-
-#color-support .status {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  border: 1px solid rgba(32,213,138,.25);
-  background: rgba(32,213,138,.08);
-  color: #5ce6ac;
-  padding: 8px 13px;
-  border-radius: 30px;
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 1px;
-  margin-bottom: 20px;
+#color-mobile .brand{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  min-width:0;
 }
-
-#color-support .status-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--green);
-  box-shadow: 0 0 10px var(--green);
+#color-mobile .logo{
+  width:38px;
+  height:38px;
+  min-width:38px;
+  display:grid;
+  place-items:center;
+  border-radius:10px;
+  background:linear-gradient(140deg,#ffe58a,#c18b19);
+  color:#111;
+  font-size:22px;
+  font-weight:900;
 }
-
-#color-support h1 {
-  margin: 0 auto 14px;
-  max-width: 390px;
-  color: #fff;
-  font-size: clamp(30px, 8.5vw, 42px);
-  line-height: 1.12;
-  font-weight: 900;
-  letter-spacing: -1.6px;
+#color-mobile .brand-name{
+  font-size:14px;
+  font-weight:900;
+  letter-spacing:.5px;
+  white-space:nowrap;
 }
-
-#color-support h1 span {
-  color: var(--gold);
+#color-mobile .brand-name span{
+  color:#f4c542;
 }
-
-#color-support .hero-text {
-  max-width: 340px;
-  margin: 0 auto;
-  color: #aab5ae;
-  font-size: 14px;
-  line-height: 1.75;
+#color-mobile .age{
+  padding:6px 9px;
+  border:1px solid #f4c54280;
+  border-radius:30px;
+  color:#f4c542;
+  font-size:10px;
+  font-weight:800;
+  white-space:nowrap;
 }
-
-/* SUPPORT CARD */
-#color-support .support-card {
-  position: relative;
-  margin-top: 12px;
-  padding: 23px 18px;
-  border-radius: 21px;
-  background: linear-gradient(145deg, #17221b, #101713);
-  border: 1px solid rgba(244,197,66,.22);
-  box-shadow: 0 15px 45px rgba(0,0,0,.25);
+#color-mobile .hero{
+  text-align:center;
+  padding:52px 0 10px;
+  animation:cm-show 1s ease both;
 }
-
-#color-support .card-label {
-  color: var(--gold);
-  font-size: 10px;
-  font-weight: 900;
-  letter-spacing: 1.5px;
-  margin-bottom: 11px;
+@keyframes cm-show{
+  from{opacity:0;transform:translateY(15px)}
+  to{opacity:1;transform:translateY(0)}
 }
-
-#color-support .support-card h2 {
-  font-size: 21px;
-  line-height: 1.3;
-  margin: 0 0 10px;
-  font-weight: 800;
+#color-mobile .badge{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  border:1px solid #20d87960;
+  background:#20d87912;
+  color:#8af0b8;
+  padding:8px 12px;
+  border-radius:30px;
+  font-size:10px;
+  font-weight:800;
+  letter-spacing:1px;
 }
-
-#color-support .support-card p {
-  color: #aab5ae;
-  font-size: 13px;
-  line-height: 1.7;
-  margin: 0;
+#color-mobile .dot{
+  height:7px;
+  width:7px;
+  border-radius:50%;
+  background:#20d879;
+  box-shadow:0 0 10px #20d879;
+  animation:cm-pulse 1.5s infinite;
 }
-
-/* FEATURES */
-#color-support .features {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 11px;
-  margin-top: 17px;
+@keyframes cm-pulse{
+  50%{opacity:.3}
 }
-
-#color-support .feature {
-  min-width: 0;
-  padding: 16px 13px;
-  border-radius: 15px;
-  background: rgba(255,255,255,.035);
-  border: 1px solid rgba(255,255,255,.08);
+#color-mobile h1{
+  width:100%;
+  font-size:clamp(32px,9vw,42px)!important;
+  line-height:1.15!important;
+  letter-spacing:-1.3px!important;
+  font-weight:900!important;
+  color:#fff!important;
+  margin:23px 0 15px!important;
+  padding:0!important;
 }
-
-#color-support .feature-icon {
-  font-size: 22px;
-  margin-bottom: 10px;
+#color-mobile h1 span{
+  color:#f4c542!important;
 }
-
-#color-support .feature h3 {
-  margin: 0 0 6px;
-  font-size: 13px;
-  font-weight: 800;
-  color: #fff;
+#color-mobile .desc{
+  color:#b6c0c9;
+  font-size:13px;
+  line-height:1.8;
+  max-width:350px;
+  margin:0 auto;
 }
-
-#color-support .feature p {
-  margin: 0;
-  color: #929d96;
-  font-size: 11px;
-  line-height: 1.6;
+#color-mobile .features{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:8px;
+  margin:22px 0;
 }
-
+#color-mobile .feature{
+  border:1px solid #ffffff20;
+  background:#ffffff09;
+  border-radius:7px;
+  padding:8px 10px;
+  color:#e6e6e6;
+  font-size:10px;
+  white-space:nowrap;
+}
+#color-mobile .feature span{
+  color:#f4c542;
+}
 /* WHATSAPP BUTTON */
-#color-support .contact-area {
-  margin-top: 24px;
-  text-align: center;
+#color-mobile .wa{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:10px!important;
+  width:100%!important;
+  max-width:100%!important;
+  min-height:58px!important;
+  margin:23px auto 0!important;
+  padding:15px 12px!important;
+  border:0!important;
+  border-radius:11px!important;
+  background:linear-gradient(135deg,#39e991,#12bd6d)!important;
+  color:#04160c!important;
+  font-size:13px!important;
+  font-weight:900!important;
+  letter-spacing:.4px!important;
+  line-height:1.2!important;
+  text-align:center!important;
+  text-decoration:none!important;
+  box-shadow:0 5px 25px #20d87935!important;
+  cursor:pointer;
+  animation:cm-attention 3s infinite;
 }
-
-#color-support .wa-button {
-  width: 100%;
-  min-height: 58px;
-  padding: 15px 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 11px;
-  border-radius: 15px;
-  background: linear-gradient(135deg, #20d58a, #0ba968);
-  color: #04160e !important;
-  text-decoration: none !important;
-  font-size: 15px;
-  font-weight: 900;
-  box-shadow: 0 9px 25px rgba(32,213,138,.17);
-  transition: transform .2s ease, filter .2s ease;
-  -webkit-tap-highlight-color: transparent;
+#color-mobile .wa svg{
+  width:23px!important;
+  height:23px!important;
+  min-width:23px;
+  display:block;
+  flex-shrink:0;
 }
-
-#color-support .wa-button:active {
-  transform: scale(.98);
-  filter: brightness(.94);
+#color-mobile .wa:visited,
+#color-mobile .wa:hover,
+#color-mobile .wa:focus{
+  color:#04160c!important;
+  text-decoration:none!important;
 }
-
-#color-support .wa-button svg {
-  width: 23px;
-  height: 23px;
-  flex-shrink: 0;
+@keyframes cm-attention{
+  0%,80%,100%{box-shadow:0 5px 20px #20d87925}
+  90%{box-shadow:0 5px 28px #20d87975}
 }
-
-#color-support .contact-note {
-  color: #849087;
-  font-size: 11px;
-  line-height: 1.6;
-  margin: 12px 0 0;
+#color-mobile .trust{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:20px;
+  color:#aab4bd;
+  font-size:10px;
 }
-
-/* DISCLAIMER */
-#color-support .disclaimer {
-  margin-top: 23px;
-  padding: 15px;
-  border-radius: 13px;
-  background: rgba(244,197,66,.055);
-  border: 1px solid rgba(244,197,66,.15);
-  color: #a8a18b;
-  font-size: 10px;
-  line-height: 1.7;
-  text-align: left;
+#color-mobile .trust span{
+  color:#f4c542;
 }
-
-#color-support .disclaimer strong {
-  display: block;
-  color: var(--gold);
-  font-size: 11px;
-  margin-bottom: 5px;
+#color-mobile .footer{
+  margin-top:34px;
+  padding-top:15px;
+  border-top:1px solid #ffffff1c;
+  text-align:center;
+  font-size:10px;
+  line-height:1.8;
+  color:#929da6;
 }
-
-/* FOOTER */
-#color-support .footer {
-  padding-top: 22px;
-  text-align: center;
-  color: #657169;
-  font-size: 10px;
-  line-height: 1.7;
+#color-mobile .footer strong{
+  color:#f4c542;
 }
-
 /* SMALL PHONES */
-@media (max-width: 360px) {
-  #color-support {
-    padding: 18px 14px 25px;
+@media(max-width:380px){
+  #color-mobile .inner{
+    padding:18px 13px 20px;
   }
-
-  #color-support .topbar {
-    margin-bottom: 27px;
+  #color-mobile .hero{
+    padding-top:38px;
   }
-
-  #color-support h1 {
-    font-size: 30px;
+  #color-mobile h1{
+    font-size:31px!important;
   }
-
-  #color-support .support-card {
-    padding: 19px 15px;
+  #color-mobile .feature{
+    font-size:9px;
+    padding:7px;
   }
-
-  #color-support .feature {
-    padding: 13px 10px;
+  #color-mobile .brand-name{
+    font-size:12px;
+  }
+  #color-mobile .footer{
+    margin-top:25px;
   }
 }
-
 /* SHORT PHONE SCREENS */
-@media (max-height: 680px) and (max-width: 600px) {
-  #color-support .topbar {
-    margin-bottom: 23px;
+@media(max-height:700px){
+  #color-mobile .inner{
+    padding-top:13px;
+    padding-bottom:13px;
   }
-
-  #color-support .hero {
-    padding-bottom: 17px;
+  #color-mobile .hero{
+    padding-top:24px;
   }
-
-  #color-support .support-card {
-    margin-top: 5px;
+  #color-mobile h1{
+    margin-top:17px!important;
+  }
+  #color-mobile .features{
+    margin:15px 0;
+  }
+  #color-mobile .footer{
+    margin-top:20px;
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  #color-mobile *{
+    animation:none!important;
+    transition:none!important;
   }
 }
 </style>
-</head>
 
-<body>
+<div class="bg"></div>
+<div class="glow glow1"></div>
+<div class="glow glow2"></div>
 
-<div id="color-support">
-  <main class="inner">
+<div class="inner">
 
-    <header class="topbar">
-      <div class="brand">
-        <div class="brand-icon">C</div>
-        <span>COLOR SUPPORT</span>
-      </div>
-      <div class="age">18+ ONLY</div>
-    </header>
+  <div class="header">
+    <div class="brand">
+      <div class="logo">C</div>
+      <div class="brand-name">COLOR <span>SUPPORT</span></div>
+    </div>
+    <div class="age">18+ ONLY</div>
+  </div>
 
-    <section class="hero">
-      <div class="status">
-        <span class="status-dot"></span>
-        SUPPORT INFORMATION
-      </div>
+  <div class="hero">
 
-      <h1>Need Help With Your <span>Trading Account?</span></h1>
-
-      <p class="hero-text">
-        Have a question or need assistance? Contact our support team to discuss your query and understand the available information.
-      </p>
-    </section>
-
-    <section class="support-card">
-      <div class="card-label">CUSTOMER ASSISTANCE</div>
-      <h2>We're Here to Help</h2>
-      <p>
-        Send us your query through WhatsApp. Please share only the details necessary to explain your issue. Never share your password, OTP or banking PIN.
-      </p>
-    </section>
-
-    <section class="features">
-      <div class="feature">
-        <div class="feature-icon">💬</div>
-        <h3>Direct Enquiry</h3>
-        <p>Contact support through WhatsApp with your questions.</p>
-      </div>
-
-      <div class="feature">
-        <div class="feature-icon">🔒</div>
-        <h3>Stay Secure</h3>
-        <p>Never share passwords, OTPs or confidential details.</p>
-      </div>
-
-      <div class="feature">
-        <div class="feature-icon">📋</div>
-        <h3>Clear Information</h3>
-        <p>Ask questions and understand the information provided.</p>
-      </div>
-
-      <div class="feature">
-        <div class="feature-icon">⚠️</div>
-        <h3>Risk Awareness</h3>
-        <p>Understand the risks before making any trading decisions.</p>
-      </div>
-    </section>
-
-    <section class="contact-area">
-      <a
-        class="wa-button"
-        href="https://wa.me/12496995236"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Contact support on WhatsApp"
-      >
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-          <path d="M20.52 3.48A11.85 11.85 0 0 0 12.08 0C5.5 0 .15 5.34.15 11.92c0 2.1.55 4.15 1.6 5.96L.05 24l6.28-1.65a11.9 11.9 0 0 0 5.74 1.46h.01c6.57 0 11.92-5.35 11.92-11.93 0-3.18-1.24-6.17-3.48-8.4ZM12.08 21.8a9.9 9.9 0 0 1-5.04-1.38l-.36-.21-3.73.98 1-3.64-.23-.37a9.85 9.85 0 0 1-1.51-5.26c0-5.44 4.43-9.87 9.88-9.87 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.43 9.87-9.89 9.87Zm5.42-7.39c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.8-1.49-1.78-1.66-2.08-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.09 4.49.71.31 1.27.5 1.7.64.72.23 1.37.2 1.89.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35Z"/>
-        </svg>
-        Contact on WhatsApp
-      </a>
-
-      <p class="contact-note">
-        Tap the button to open WhatsApp and send your enquiry.
-      </p>
-    </section>
-
-    <div class="disclaimer">
-      <strong>Important Risk Disclaimer</strong>
-      Color trading and similar activities can involve substantial financial risk. Losses are possible, and no profit or recovery is guaranteed. This page does not promise guaranteed returns or loss recovery.
+    <div class="badge">
+      <span class="dot"></span>
+      ACCOUNT SUPPORT
     </div>
 
-    <footer class="footer">
-      <p>© 2026 Color Support. All rights reserved.</p>
-      <p>Independent enquiry and information page.</p>
-    </footer>
+    <h1>
+      Trading Loss?<br>
+      <span>Explore Your Options.</span>
+    </h1>
 
-  </main>
+    <p class="desc">
+      Color Trading mein loss hua hai?
+      Apni query share karein aur available
+      account support information ke baare mein jaaniye.
+    </p>
+
+    <div class="features">
+      <div class="feature"><span>✦</span> Account Queries</div>
+      <div class="feature"><span>✦</span> Support</div>
+      <div class="feature"><span>✦</span> Information</div>
+    </div>
+
+    <a class="wa"
+       href="https://wa.me/12496995236?text=Hello%2C%20I%20need%20assistance%20regarding%20my%20colour%20trading%20losses.%20Please%20share%20the%20available%20information."
+       target="_blank"
+       rel="noopener noreferrer">
+
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M12.04 2a9.85 9.85 0 0 0-8.46 14.9L2.2 22l5.25-1.38A9.95 9.95 0 1 0 12.04 2zm0 18.18a8.2 8.2 0 0 1-4.18-1.14l-.3-.18-3.11.82.83-3.03-.2-.31a8.2 8.2 0 1 1 6.96 3.84zm4.5-6.14c-.25-.12-1.48-.73-1.71-.81-.23-.09-.4-.12-.56.12-.17.25-.64.81-.79.98-.15.16-.29.18-.54.06-.25-.12-1.05-.39-2-1.24-.74-.66-1.24-1.48-1.39-1.73-.15-.25-.02-.38.11-.5.11-.1.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.08 0 1.23.89 2.42 1.01 2.59.12.16 1.75 2.67 4.24 3.74.59.25 1.05.4 1.41.51.59.19 1.12.16 1.54.1.47-.07 1.48-.61 1.69-1.2.21-.6.21-1.11.15-1.22-.06-.11-.23-.18-.48-.31z"/>
+      </svg>
+
+      <span>CONTACT ON WHATSAPP</span>
+    </a>
+
+    <div class="trust">
+      <div>✓ <span>18+</span> Adults Only</div>
+      <div>✓ Risk Awareness</div>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <strong>IMPORTANT NOTICE – 18+</strong><br>
+    Trading involves financial risk. Loss recovery is not guaranteed.
+    No fixed profit or returns are promised. Never share OTP, PIN
+    or passwords.
+    <br><br>
+    Independent support enquiry page.
+  </div>
+
 </div>
-
-</body>
-</html>
+</div>
