@@ -1,380 +1,501 @@
 
-<div id="color-mobile">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<div id="rohan-community">
+
 <style>
-html,body{
-  margin:0!important;
-  padding:0!important;
-  width:100%!important;
-  min-height:100%!important;
-  background:#080b10!important;
-  overflow-x:hidden!important;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+#rohan-community,
+#rohan-community * {
+  box-sizing: border-box;
 }
-#page,#content,.site,.site-content,.content-area,
-.site-main,.entry-content,.wp-site-blocks,.dslc-main{
-  margin:0!important;
-  padding:0!important;
-  width:100%!important;
-  max-width:100%!important;
-  background:#080b10!important;
-}
-#color-mobile,
-#color-mobile *{
-  box-sizing:border-box!important;
-}
-#color-mobile{
-  position:relative;
-  isolation:isolate;
-  width:100vw!important;
-  max-width:none!important;
-  min-height:100vh;
-  min-height:100dvh;
-  margin-left:calc(50% - 50vw)!important;
-  padding:0!important;
-  overflow:hidden!important;
-  background:#080b10!important;
-  color:#fff;
-  font-family:Arial,Helvetica,sans-serif;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-#color-mobile .bg{
-  position:absolute;
-  inset:0;
-  z-index:-2;
+
+#rohan-community {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+  margin: 0;
+  padding: 30px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  isolation: isolate;
   background:
-    radial-gradient(circle at 10% 15%,#c99b3035,transparent 38%),
-    radial-gradient(circle at 90% 85%,#12b96b25,transparent 40%),
-    linear-gradient(145deg,#090d12,#151b20,#080b10);
-  background-size:200% 200%;
-  animation:cm-bg 12s ease infinite alternate;
+    radial-gradient(circle at 15% 15%, rgba(255,0,38,.38), transparent 35%),
+    radial-gradient(circle at 85% 80%, rgba(0,102,255,.35), transparent 38%),
+    linear-gradient(135deg,#040406 0%,#16030b 48%,#020b18 100%);
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
 }
-@keyframes cm-bg{
-  to{background-position:100% 100%}
+
+#rohan-community .live-grid {
+  position: absolute;
+  inset: -60%;
+  width: 220%;
+  height: 220%;
+  opacity: .17;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255,255,255,.16) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.16) 1px,transparent 1px);
+  background-size: 55px 55px;
+  transform: perspective(500px) rotateX(55deg);
+  animation: rc-grid 12s linear infinite;
 }
-#color-mobile .glow{
-  position:absolute;
-  width:140px;
-  height:140px;
-  border-radius:50%;
-  filter:blur(65px);
-  opacity:.3;
-  z-index:-1;
-  pointer-events:none;
+
+@keyframes rc-grid {
+  to {background-position: 0 110px}
 }
-#color-mobile .glow1{
-  background:#f4c542;
-  top:100px;
-  left:-70px;
+
+#rohan-community .live-light {
+  position: absolute;
+  width: 430px;
+  height: 430px;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: .35;
+  pointer-events: none;
+  animation: rc-light 9s ease-in-out infinite alternate;
 }
-#color-mobile .glow2{
-  background:#20d879;
-  bottom:100px;
-  right:-70px;
+
+#rohan-community .light-red {
+  top: -190px;
+  left: -150px;
+  background: #ff002b;
 }
-#color-mobile .inner{
-  width:100%;
-  max-width:430px;
-  padding:22px 17px 24px;
-  margin:auto;
+
+#rohan-community .light-blue {
+  right: -170px;
+  bottom: -190px;
+  background: #006eff;
+  animation-delay: -4s;
 }
-#color-mobile .header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:8px;
-  padding-bottom:15px;
-  border-bottom:1px solid #ffffff20;
+
+@keyframes rc-light {
+  to {transform: translate(70px,60px) scale(1.25)}
 }
-#color-mobile .brand{
-  display:flex;
-  align-items:center;
-  gap:9px;
-  min-width:0;
+
+#rohan-community .particle {
+  position: absolute;
+  bottom: -20px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 0 15px #fff;
+  opacity: 0;
+  animation: rc-particle 7s linear infinite;
+  pointer-events: none;
 }
-#color-mobile .logo{
-  width:38px;
-  height:38px;
-  min-width:38px;
-  display:grid;
-  place-items:center;
-  border-radius:10px;
-  background:linear-gradient(140deg,#ffe58a,#c18b19);
-  color:#111;
-  font-size:22px;
-  font-weight:900;
+
+#rohan-community .particle:nth-of-type(1) {left:10%;animation-delay:0s}
+#rohan-community .particle:nth-of-type(2) {left:30%;animation-delay:2s}
+#rohan-community .particle:nth-of-type(3) {left:65%;animation-delay:4s}
+#rohan-community .particle:nth-of-type(4) {left:88%;animation-delay:1s}
+
+@keyframes rc-particle {
+  0% {transform:translateY(0) scale(.4);opacity:0}
+  20% {opacity:.75}
+  100% {transform:translateY(-110vh) scale(1.3);opacity:0}
 }
-#color-mobile .brand-name{
-  font-size:14px;
-  font-weight:900;
-  letter-spacing:.5px;
-  white-space:nowrap;
+
+#rohan-community .main-content {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  max-width: 780px;
+  margin: auto;
+  text-align: center;
+  animation: rc-entry .9s ease-out both;
 }
-#color-mobile .brand-name span{
-  color:#f4c542;
+
+@keyframes rc-entry {
+  from {opacity:0;transform:translateY(28px)}
+  to {opacity:1;transform:translateY(0)}
 }
-#color-mobile .age{
-  padding:6px 9px;
-  border:1px solid #f4c54280;
-  border-radius:30px;
-  color:#f4c542;
-  font-size:10px;
-  font-weight:800;
-  white-space:nowrap;
+
+#rohan-community .spidey-logo {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  margin: 0 auto 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(145deg,#fa0028,#920017);
+  border: 4px solid rgba(255,255,255,.92);
+  box-shadow:
+    0 0 0 9px rgba(255,0,39,.15),
+    0 0 48px rgba(255,0,39,.65);
+  animation: rc-float 3s ease-in-out infinite;
 }
-#color-mobile .hero{
-  text-align:center;
-  padding:52px 0 10px;
-  animation:cm-show 1s ease both;
+
+#rohan-community .spidey-logo::after {
+  content: "";
+  position: absolute;
+  inset: -14px;
+  border: 1px solid rgba(255,255,255,.30);
+  border-radius: 50%;
+  animation: rc-pulse 2s ease-out infinite;
 }
-@keyframes cm-show{
-  from{opacity:0;transform:translateY(15px)}
-  to{opacity:1;transform:translateY(0)}
+
+@keyframes rc-float {
+  50% {transform:translateY(-9px)}
 }
-#color-mobile .badge{
-  display:inline-flex;
-  align-items:center;
-  gap:7px;
-  border:1px solid #20d87960;
-  background:#20d87912;
-  color:#8af0b8;
-  padding:8px 12px;
-  border-radius:30px;
-  font-size:10px;
-  font-weight:800;
-  letter-spacing:1px;
+
+@keyframes rc-pulse {
+  0% {transform:scale(.90);opacity:.8}
+  100% {transform:scale(1.20);opacity:0}
 }
-#color-mobile .dot{
-  height:7px;
-  width:7px;
-  border-radius:50%;
-  background:#20d879;
-  box-shadow:0 0 10px #20d879;
-  animation:cm-pulse 1.5s infinite;
+
+#rohan-community .spidey-logo svg {
+  width: 84px;
+  height: 84px;
+  filter: drop-shadow(0 5px 8px rgba(0,0,0,.50));
 }
-@keyframes cm-pulse{
-  50%{opacity:.3}
+
+#rohan-community .community-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  padding: 8px 17px;
+  border: 1px solid rgba(255,255,255,.22);
+  border-radius: 999px;
+  background: rgba(255,255,255,.07);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
 }
-#color-mobile h1{
-  width:100%;
-  font-size:clamp(32px,9vw,42px)!important;
-  line-height:1.15!important;
-  letter-spacing:-1.3px!important;
-  font-weight:900!important;
-  color:#fff!important;
-  margin:23px 0 15px!important;
-  padding:0!important;
+
+#rohan-community .live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #25d366;
+  box-shadow: 0 0 12px #25d366;
+  animation: rc-blink 1.2s ease-in-out infinite;
 }
-#color-mobile h1 span{
-  color:#f4c542!important;
+
+@keyframes rc-blink {
+  50% {opacity:.30}
 }
-#color-mobile .desc{
-  color:#b6c0c9;
-  font-size:13px;
-  line-height:1.8;
-  max-width:350px;
-  margin:0 auto;
+
+#rohan-community .main-heading {
+  margin: 0 0 15px;
+  padding: 0;
+  color: #fff;
+  font-size: clamp(38px,7.5vw,75px);
+  line-height: 1.08;
+  font-weight: 900;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+  text-shadow: 0 8px 30px rgba(0,0,0,.60);
 }
-#color-mobile .features{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  flex-wrap:wrap;
-  gap:8px;
-  margin:22px 0;
+
+#rohan-community .main-heading span {
+  display: block;
+  color: transparent;
+  background: linear-gradient(90deg,#ff163d 0%,#fff 48%,#1681ff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
 }
-#color-mobile .feature{
-  border:1px solid #ffffff20;
-  background:#ffffff09;
-  border-radius:7px;
-  padding:8px 10px;
-  color:#e6e6e6;
-  font-size:10px;
-  white-space:nowrap;
+
+#rohan-community .description {
+  max-width: 550px;
+  margin: 5px auto 25px;
+  color: rgba(255,255,255,.76);
+  font-size: 14px;
+  line-height: 1.8;
 }
-#color-mobile .feature span{
-  color:#f4c542;
-}
+
 /* WHATSAPP BUTTON */
-#color-mobile .wa{
-  display:flex!important;
-  align-items:center!important;
-  justify-content:center!important;
-  gap:10px!important;
-  width:100%!important;
-  max-width:100%!important;
-  min-height:58px!important;
-  margin:23px auto 0!important;
-  padding:15px 12px!important;
-  border:0!important;
-  border-radius:11px!important;
-  background:linear-gradient(135deg,#39e991,#12bd6d)!important;
-  color:#04160c!important;
-  font-size:13px!important;
-  font-weight:900!important;
-  letter-spacing:.4px!important;
-  line-height:1.2!important;
-  text-align:center!important;
-  text-decoration:none!important;
-  box-shadow:0 5px 25px #20d87935!important;
-  cursor:pointer;
-  animation:cm-attention 3s infinite;
+#rohan-community .whatsapp-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  min-width: 260px;
+  padding: 17px 30px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.75);
+  border-radius: 999px;
+  color: #04160c !important;
+  background: linear-gradient(90deg,#39e991,#12bd6d);
+  box-shadow: 0 14px 38px rgba(37,211,102,.35);
+  text-decoration: none !important;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: .7px;
+  transition: .3s ease;
+  -webkit-tap-highlight-color: transparent;
 }
-#color-mobile .wa svg{
-  width:23px!important;
-  height:23px!important;
-  min-width:23px;
-  display:block;
-  flex-shrink:0;
+
+#rohan-community .whatsapp-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 60%;
+  height: 100%;
+  transform: skewX(-25deg);
+  background: linear-gradient(90deg,transparent,rgba(255,255,255,.48),transparent);
+  animation: rc-shine 3s ease-in-out infinite;
 }
-#color-mobile .wa:visited,
-#color-mobile .wa:hover,
-#color-mobile .wa:focus{
-  color:#04160c!important;
-  text-decoration:none!important;
+
+@keyframes rc-shine {
+  0%,35% {left:-120%}
+  70%,100% {left:150%}
 }
-@keyframes cm-attention{
-  0%,80%,100%{box-shadow:0 5px 20px #20d87925}
-  90%{box-shadow:0 5px 28px #20d87975}
+
+#rohan-community .whatsapp-button:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 20px 48px rgba(37,211,102,.45);
 }
-#color-mobile .trust{
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:12px;
-  margin-top:20px;
-  color:#aab4bd;
-  font-size:10px;
+
+#rohan-community .whatsapp-button:active {
+  transform: scale(.97);
 }
-#color-mobile .trust span{
-  color:#f4c542;
+
+#rohan-community .whatsapp-button svg {
+  position: relative;
+  z-index: 2;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
 }
-#color-mobile .footer{
-  margin-top:34px;
-  padding-top:15px;
-  border-top:1px solid #ffffff1c;
-  text-align:center;
-  font-size:10px;
-  line-height:1.8;
-  color:#929da6;
+
+#rohan-community .whatsapp-button span {
+  position: relative;
+  z-index: 2;
 }
-#color-mobile .footer strong{
-  color:#f4c542;
+
+#rohan-community .age-notice {
+  width: 100%;
+  max-width: 520px;
+  margin: 24px auto 0;
+  padding: 13px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid rgba(255,255,255,.16);
+  border-radius: 12px;
+  color: rgba(255,255,255,.72);
+  background: rgba(0,0,0,.28);
+  font-size: 11px;
+  line-height: 1.6;
 }
-/* SMALL PHONES */
-@media(max-width:380px){
-  #color-mobile .inner{
-    padding:18px 13px 20px;
+
+#rohan-community .age-icon {
+  min-width: 37px;
+  height: 37px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ff2144;
+  border-radius: 50%;
+  color: #fff;
+  background: rgba(255,0,39,.15);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+#rohan-community .brand-name {
+  margin-top: 32px;
+  color: rgba(255,255,255,.48);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+#rohan-community .brand-name strong {
+  color: #fff;
+}
+
+/* MOBILE */
+@media(max-width:600px) {
+  #rohan-community {
+    padding: 25px 15px;
   }
-  #color-mobile .hero{
-    padding-top:38px;
+
+  #rohan-community .main-content {
+    max-width: 100%;
   }
-  #color-mobile h1{
-    font-size:31px!important;
+
+  #rohan-community .spidey-logo {
+    width: 105px;
+    height: 105px;
+    margin-bottom: 21px;
   }
-  #color-mobile .feature{
-    font-size:9px;
-    padding:7px;
+
+  #rohan-community .spidey-logo svg {
+    width: 68px;
+    height: 68px;
   }
-  #color-mobile .brand-name{
-    font-size:12px;
+
+  #rohan-community .community-label {
+    margin-bottom: 14px;
+    padding: 7px 13px;
+    font-size: 10px;
+    letter-spacing: 1.1px;
   }
-  #color-mobile .footer{
-    margin-top:25px;
+
+  #rohan-community .main-heading {
+    font-size: clamp(32px,9.5vw,48px);
+    line-height: 1.12;
+    letter-spacing: -1.5px;
+  }
+
+  #rohan-community .description {
+    margin: 5px auto 22px;
+    font-size: 13px;
+    line-height: 1.7;
+  }
+
+  #rohan-community .whatsapp-button {
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    min-height: 56px;
+    padding: 15px 14px;
+    font-size: 13px;
+  }
+
+  #rohan-community .age-notice {
+    max-width: 100%;
+    padding: 11px 12px;
+    gap: 9px;
+    text-align: left;
+    font-size: 10px;
+  }
+
+  #rohan-community .age-icon {
+    min-width: 34px;
+    height: 34px;
+    font-size: 11px;
+  }
+
+  #rohan-community .brand-name {
+    margin-top: 28px;
+  }
+
+  #rohan-community .live-grid {
+    background-size: 42px 42px;
   }
 }
-/* SHORT PHONE SCREENS */
-@media(max-height:700px){
-  #color-mobile .inner{
-    padding-top:13px;
-    padding-bottom:13px;
+
+@media(max-width:360px) {
+  #rohan-community {
+    padding: 22px 12px;
   }
-  #color-mobile .hero{
-    padding-top:24px;
+
+  #rohan-community .main-heading {
+    font-size: 31px;
   }
-  #color-mobile h1{
-    margin-top:17px!important;
-  }
-  #color-mobile .features{
-    margin:15px 0;
-  }
-  #color-mobile .footer{
-    margin-top:20px;
+
+  #rohan-community .description {
+    font-size: 12px;
   }
 }
-@media(prefers-reduced-motion:reduce){
-  #color-mobile *{
-    animation:none!important;
-    transition:none!important;
+
+@media(prefers-reduced-motion:reduce) {
+  #rohan-community *,
+  #rohan-community *::before,
+  #rohan-community *::after {
+    animation: none !important;
+    transition: none !important;
   }
 }
 </style>
 
-<div class="bg"></div>
-<div class="glow glow1"></div>
-<div class="glow glow2"></div>
+<div class="live-grid"></div>
+<div class="live-light light-red"></div>
+<div class="live-light light-blue"></div>
 
-<div class="inner">
+<span class="particle"></span>
+<span class="particle"></span>
+<span class="particle"></span>
+<span class="particle"></span>
 
-  <div class="header">
-    <div class="brand">
-      <div class="logo">C</div>
-      <div class="brand-name">COLOR <span>SUPPORT</span></div>
-    </div>
-    <div class="age">18+ ONLY</div>
+<div class="main-content">
+
+  <div class="spidey-logo">
+    <svg viewBox="0 0 120 120" aria-hidden="true">
+      <path d="M60 9C38 9 21 25 21 47c0 30 18 55 39 64 21-9 39-34 39-64C99 25 82 9 60 9Z"
+        fill="#df0022" stroke="#101018" stroke-width="5"/>
+      <path d="M60 12v96M25 40h70M23 59h74M31 81h58"
+        stroke="#11111a" stroke-width="2.4"/>
+      <path d="M60 38 31 21M60 38 89 21M60 58 23 40M60 58 97 40M60 78 25 59M60 78 95 59M60 99 31 81M60 99 89 81"
+        stroke="#11111a" stroke-width="2.4"/>
+      <path d="M31 43c7-9 17-12 25-10-2 17-8 29-20 36-7-7-9-16-5-26Z"
+        fill="#fff" stroke="#11111a" stroke-width="4"/>
+      <path d="M89 43c-7-9-17-12-25-10 2 17 8 29 20 36 7-7 9-16 5-26Z"
+        fill="#fff" stroke="#11111a" stroke-width="4"/>
+    </svg>
   </div>
 
-  <div class="hero">
-
-    <div class="badge">
-      <span class="dot"></span>
-      ACCOUNT SUPPORT
-    </div>
-
-    <h1>
-      Trading Loss?<br>
-      <span>Explore Your Options.</span>
-    </h1>
-
-    <p class="desc">
-      Color Trading mein loss hua hai?
-      Apni query share karein aur available
-      account support information ke baare mein jaaniye.
-    </p>
-
-    <div class="features">
-      <div class="feature"><span>✦</span> Account Queries</div>
-      <div class="feature"><span>✦</span> Support</div>
-      <div class="feature"><span>✦</span> Information</div>
-    </div>
-
-    <a class="wa"
-       href="https://wa.me/12496995236?text=Hello%2C%20I%20need%20assistance%20regarding%20my%20colour%20trading%20losses.%20Please%20share%20the%20available%20information."
-       target="_blank"
-       rel="noopener noreferrer">
-
-      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-        <path d="M12.04 2a9.85 9.85 0 0 0-8.46 14.9L2.2 22l5.25-1.38A9.95 9.95 0 1 0 12.04 2zm0 18.18a8.2 8.2 0 0 1-4.18-1.14l-.3-.18-3.11.82.83-3.03-.2-.31a8.2 8.2 0 1 1 6.96 3.84zm4.5-6.14c-.25-.12-1.48-.73-1.71-.81-.23-.09-.4-.12-.56.12-.17.25-.64.81-.79.98-.15.16-.29.18-.54.06-.25-.12-1.05-.39-2-1.24-.74-.66-1.24-1.48-1.39-1.73-.15-.25-.02-.38.11-.5.11-.1.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31-.23.25-.87.85-.87 2.08 0 1.23.89 2.42 1.01 2.59.12.16 1.75 2.67 4.24 3.74.59.25 1.05.4 1.41.51.59.19 1.12.16 1.54.1.47-.07 1.48-.61 1.69-1.2.21-.6.21-1.11.15-1.22-.06-.11-.23-.18-.48-.31z"/>
-      </svg>
-
-      <span>CONTACT ON WHATSAPP</span>
-    </a>
-
-    <div class="trust">
-      <div>✓ <span>18+</span> Adults Only</div>
-      <div>✓ Risk Awareness</div>
-    </div>
-
+  <div class="community-label">
+    <span class="live-dot"></span>
+    SUPPORT INFORMATION
   </div>
 
-  <div class="footer">
-    <strong>IMPORTANT NOTICE – 18+</strong><br>
-    Trading involves financial risk. Loss recovery is not guaranteed.
-    No fixed profit or returns are promised. Never share OTP, PIN
-    or passwords.
-    <br><br>
-    Independent support enquiry page.
+  <h1 class="main-heading">
+    ONLY LOSS
+    <span>RECOVERY MASSAGE</span>
+  </h1>
+
+  <p class="description">
+    Have questions about trading losses? Contact us on WhatsApp to discuss your enquiry and learn about available information. No recovery or financial outcome is guaranteed.
+  </p>
+
+  <a
+    id="contactWhatsApp"
+    class="whatsapp-button"
+    href="https://wa.me/12496995236"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M20.52 3.48A11.85 11.85 0 0 0 12.08 0C5.5 0 .15 5.34.15 11.92c0 2.1.55 4.15 1.6 5.96L.05 24l6.28-1.65a11.9 11.9 0 0 0 5.74 1.46h.01c6.57 0 11.92-5.35 11.92-11.93 0-3.18-1.24-6.17-3.48-8.4ZM12.08 21.8a9.9 9.9 0 0 1-5.04-1.38l-.36-.21-3.73.98 1-3.64-.23-.37a9.85 9.85 0 0 1-1.51-5.26c0-5.44 4.43-9.87 9.88-9.87 2.64 0 5.12 1.03 6.99 2.9a9.82 9.82 0 0 1 2.89 6.99c0 5.45-4.43 9.87-9.89 9.87Zm5.42-7.39c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.8-1.49-1.78-1.66-2.08-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.2 5.09 4.49.71.31 1.27.5 1.7.64.72.23 1.37.2 1.89.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35Z"/>
+    </svg>
+    <span>CONTACT WHATSAPP</span>
+  </a>
+
+  <div class="age-notice">
+    <div class="age-icon">18+</div>
+    <div>
+      This page is intended for adults aged 18 and above. Trading involves financial risk. Loss recovery is not guaranteed. Never share OTP, PIN or passwords.
+    </div>
+  </div>
+
+  <div class="brand-name">
+    Designed by <strong>FLOX ADS</strong>
   </div>
 
 </div>
+
 </div>
+
+<script>
+(function () {
+  var button = document.getElementById('contactWhatsApp');
+
+  if (button) {
+    button.addEventListener('click', function () {
+      if (typeof window.fbq === 'function') {
+        window.fbq('track', 'Contact');
+      }
+    });
+  }
+})();
+</script>
