@@ -1,245 +1,303 @@
 
-<div id="flox-color">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<div id="color-mobile">
 
 <style>
-#flox-color {
-  --gold:#f4c542;
-  --green:#20d879;
-  font-family:'Poppins',Arial,sans-serif;
+#color-mobile {
+  width:100% !important;
+  max-width:100% !important;
+  min-width:0 !important;
+  margin:0 !important;
+  padding:0 !important;
+  position:relative;
+  overflow:hidden !important;
+  box-sizing:border-box !important;
   background:#080b10;
   color:#fff;
-  position:relative;
-  overflow:hidden;
-  border-radius:16px;
-  min-height:620px;
+  font-family:Arial,Helvetica,sans-serif;
+  border-radius:12px;
   isolation:isolate;
 }
-#flox-color * {box-sizing:border-box}
 
-#flox-color .bg {
+#color-mobile *,
+#color-mobile *:before,
+#color-mobile *:after {
+  box-sizing:border-box !important;
+}
+
+#color-mobile .bg {
   position:absolute;
-  inset:-20%;
+  inset:0;
   z-index:-2;
   background:
-    radial-gradient(circle at 20% 30%,#d7a52c30,transparent 35%),
-    radial-gradient(circle at 80% 70%,#20d87920,transparent 35%),
-    linear-gradient(135deg,#080b10,#171d20,#080b10);
+    radial-gradient(circle at 10% 20%,#c99b3035,transparent 40%),
+    radial-gradient(circle at 90% 80%,#12b96b25,transparent 40%),
+    linear-gradient(145deg,#090d12,#151b20,#080b10);
   background-size:200% 200%;
-  animation:bgmove 12s ease-in-out infinite alternate;
-}
-@keyframes bgmove {
-  to {background-position:100% 100%}
-}
-#flox-color .glow {
-  position:absolute;
-  width:230px;height:230px;
-  border-radius:50%;
-  filter:blur(90px);
-  opacity:.2;
-  z-index:-1;
-  animation:floatglow 8s ease-in-out infinite alternate;
-}
-#flox-color .glow.a {background:#f4c542;top:5%;left:-100px}
-#flox-color .glow.b {background:#20d879;bottom:5%;right:-100px}
-@keyframes floatglow {
-  to {transform:translate(60px,40px)}
+  animation:cm-bg 12s ease infinite alternate;
 }
 
-#flox-color .wrap {
-  width:min(900px,92%);
-  margin:auto;
-  padding:25px 0 35px;
+@keyframes cm-bg {
+  to {background-position:100% 100%}
 }
-#flox-color .header {
+
+#color-mobile .glow {
+  position:absolute;
+  width:140px;
+  height:140px;
+  border-radius:50%;
+  filter:blur(65px);
+  opacity:.3;
+  z-index:-1;
+  pointer-events:none;
+}
+#color-mobile .glow1 {
+  background:#f4c542;
+  top:100px;
+  left:-70px;
+}
+#color-mobile .glow2 {
+  background:#20d879;
+  bottom:100px;
+  right:-70px;
+}
+
+#color-mobile .inner {
+  width:100% !important;
+  max-width:100% !important;
+  padding:20px 16px 25px !important;
+  margin:0 auto !important;
+}
+
+#color-mobile .header {
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding-bottom:20px;
-  border-bottom:1px solid #ffffff18;
+  gap:8px;
+  width:100%;
+  padding-bottom:16px;
+  border-bottom:1px solid #ffffff20;
 }
-#flox-color .brand {
+
+#color-mobile .brand {
   display:flex;
   align-items:center;
-  gap:12px;
+  gap:9px;
+  min-width:0;
 }
-#flox-color .logo {
-  width:48px;height:48px;
+
+#color-mobile .logo {
+  width:39px;
+  height:39px;
+  min-width:39px;
   display:grid;
   place-items:center;
-  border-radius:13px;
+  border-radius:10px;
   background:linear-gradient(140deg,#ffe58a,#c18b19);
-  color:#101010;
-  font-size:26px;
+  color:#111;
+  font-size:22px;
   font-weight:900;
-  box-shadow:0 0 22px #f4c54240;
 }
-#flox-color .brand-name {
-  font-size:17px;
+
+#color-mobile .brand-name {
+  font-size:clamp(12px,3.8vw,17px);
   font-weight:900;
-  letter-spacing:1px;
+  letter-spacing:.5px;
+  white-space:nowrap;
 }
-#flox-color .brand-name span {color:var(--gold)}
-#flox-color .age {
-  border:1px solid #f4c54290;
-  color:var(--gold);
-  background:#f4c54212;
-  padding:8px 13px;
+#color-mobile .brand-name span {color:#f4c542}
+
+#color-mobile .age {
+  padding:6px 9px;
+  border:1px solid #f4c54280;
   border-radius:30px;
-  font-size:12px;
+  color:#f4c542;
+  font-size:10px;
   font-weight:800;
+  white-space:nowrap;
 }
-#flox-color .hero {
+
+#color-mobile .hero {
   text-align:center;
-  padding:75px 0 25px;
-  animation:showup 1s ease both;
+  padding:65px 0 20px;
+  width:100%;
+  animation:cm-show 1s ease both;
 }
-@keyframes showup {
-  from {opacity:0;transform:translateY(22px)}
+
+@keyframes cm-show {
+  from {opacity:0;transform:translateY(15px)}
   to {opacity:1;transform:translateY(0)}
 }
-#flox-color .badge {
+
+#color-mobile .badge {
   display:inline-flex;
-  gap:9px;
   align-items:center;
-  padding:9px 16px;
+  gap:7px;
+  border:1px solid #20d87960;
+  background:#20d87912;
+  color:#8af0b8;
+  padding:8px 12px;
   border-radius:30px;
-  border:1px solid #20d87965;
-  background:#20d8790d;
-  color:#85edb6;
-  font-size:11px;
-  font-weight:800;
-  letter-spacing:1.2px;
-}
-#flox-color .dot {
-  height:8px;width:8px;
-  background:#20d879;
-  border-radius:50%;
-  box-shadow:0 0 12px #20d879;
-  animation:pulse 1.5s infinite;
-}
-@keyframes pulse {
-  50% {opacity:.35;transform:scale(.7)}
-}
-#flox-color h1 {
-  font-size:clamp(36px,7vw,65px);
-  line-height:1.12;
-  letter-spacing:-2px;
-  font-weight:900;
-  margin:25px auto 18px;
-}
-#flox-color h1 span {
-  background:linear-gradient(90deg,#ffe58a,#e7ad32,#fff1b0);
-  -webkit-background-clip:text;
-  background-clip:text;
-  color:transparent;
-}
-#flox-color .description {
-  max-width:580px;
-  margin:auto;
-  color:#b5bec8;
-  font-size:15px;
-  line-height:1.9;
-}
-#flox-color .features {
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:11px;
-  margin:28px 0;
-}
-#flox-color .feature {
-  border:1px solid #ffffff20;
-  background:#ffffff08;
-  padding:10px 14px;
-  border-radius:8px;
-  color:#e0e5e9;
-  font-size:12px;
-}
-#flox-color .feature span {color:var(--gold)}
-#flox-color .whatsapp {
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:12px;
-  padding:17px 30px;
-  background:linear-gradient(135deg,#39e991,#15bd6e);
-  color:#04180d!important;
-  border-radius:10px;
-  font-size:15px;
-  font-weight:900;
-  text-decoration:none!important;
-  box-shadow:0 8px 30px #20d87930;
-  animation:attention 2.5s infinite;
-  transition:.3s;
-}
-@keyframes attention {
-  0%,80%,100% {box-shadow:0 8px 25px #20d87925}
-  90% {box-shadow:0 8px 35px #20d87980}
-}
-#flox-color .whatsapp:hover {
-  transform:translateY(-4px);
-  box-shadow:0 10px 35px #20d87970;
-}
-#flox-color .whatsapp svg {
-  width:22px;height:22px;
-}
-#flox-color .trust {
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-  gap:22px;
-  margin-top:27px;
-  font-size:11px;
-  color:#aeb8c0;
-}
-#flox-color .trust span {color:var(--gold)}
-#flox-color .bottom {
-  border-top:1px solid #ffffff18;
-  margin-top:55px;
-  padding-top:20px;
-  text-align:center;
-  font-size:11px;
-  line-height:1.9;
-  color:#89949f;
-}
-#flox-color .bottom strong {color:var(--gold)}
-#flox-color .footer-brand {
-  color:#fff;
+  font-size:10px;
   font-weight:800;
   letter-spacing:1px;
-  margin-bottom:8px;
 }
-#flox-color .footer-brand span {color:var(--gold)}
 
-@media(max-width:550px) {
-  #flox-color {min-height:570px}
-  #flox-color .wrap {width:90%;padding-top:19px}
-  #flox-color .hero {padding-top:65px}
-  #flox-color h1 {letter-spacing:-1px}
-  #flox-color .description {font-size:13px}
-  #flox-color .features {gap:8px}
-  #flox-color .feature {font-size:10px;padding:9px 10px}
-  #flox-color .whatsapp {width:100%;font-size:14px}
-  #flox-color .trust {gap:12px}
-  #flox-color .bottom {margin-top:45px}
+#color-mobile .dot {
+  height:7px;
+  width:7px;
+  border-radius:50%;
+  background:#20d879;
+  box-shadow:0 0 10px #20d879;
+  animation:cm-pulse 1.5s infinite;
+}
+
+@keyframes cm-pulse {
+  50% {opacity:.3}
+}
+
+#color-mobile h1 {
+  width:100%;
+  font-size:clamp(32px,8.5vw,56px) !important;
+  line-height:1.16 !important;
+  letter-spacing:-1.3px !important;
+  font-weight:900 !important;
+  color:#fff !important;
+  margin:24px 0 16px !important;
+  padding:0 !important;
+}
+
+#color-mobile h1 span {
+  color:#f4c542 !important;
+}
+
+#color-mobile .desc {
+  color:#b6c0c9;
+  font-size:14px;
+  line-height:1.8;
+  max-width:450px;
+  margin:0 auto;
+}
+
+#color-mobile .features {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:8px;
+  margin:24px 0;
+}
+
+#color-mobile .feature {
+  border:1px solid #ffffff20;
+  background:#ffffff09;
+  border-radius:7px;
+  padding:8px 10px;
+  color:#e6e6e6;
+  font-size:10px;
+  white-space:nowrap;
+}
+#color-mobile .feature span {color:#f4c542}
+
+#color-mobile .wa {
+  display:flex !important;
+  width:100% !important;
+  min-height:53px;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:14px 12px;
+  border-radius:9px;
+  background:linear-gradient(135deg,#39e991,#12bd6d);
+  color:#04160c !important;
+  font-size:14px;
+  font-weight:900;
+  text-decoration:none !important;
+  box-shadow:0 5px 25px #20d87935;
+  animation:cm-attention 3s infinite;
+  transition:.25s;
+}
+
+@keyframes cm-attention {
+  0%,80%,100% {box-shadow:0 5px 20px #20d87925}
+  90% {box-shadow:0 5px 28px #20d87975}
+}
+
+#color-mobile .wa svg {
+  width:21px;
+  height:21px;
+  flex-shrink:0;
+}
+
+#color-mobile .trust {
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:23px;
+  color:#aab4bd;
+  font-size:10px;
+}
+
+#color-mobile .trust span {color:#f4c542}
+
+#color-mobile .footer {
+  margin-top:45px;
+  padding-top:17px;
+  border-top:1px solid #ffffff1c;
+  text-align:center;
+  font-size:10px;
+  line-height:1.8;
+  color:#929da6;
+}
+
+#color-mobile .footer strong {color:#f4c542}
+
+@media(max-width:380px) {
+  #color-mobile .inner {padding:17px 12px 22px !important}
+  #color-mobile .hero {padding-top:55px}
+  #color-mobile h1 {font-size:32px !important}
+  #color-mobile .feature {font-size:9px;padding:7px}
+  #color-mobile .brand-name {font-size:12px}
+}
+
+@media(min-width:700px) {
+  #color-mobile .inner {
+    max-width:720px !important;
+    padding:30px 25px 35px !important;
+  }
+  #color-mobile .hero {padding-top:85px}
+  #color-mobile .wa {
+    width:auto !important;
+    min-width:280px;
+    margin:auto;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  #color-mobile *,#color-mobile *:before {
+    animation:none !important;
+    transition:none !important;
+  }
 }
 </style>
 
 <div class="bg"></div>
-<div class="glow a"></div>
-<div class="glow b"></div>
+<div class="glow glow1"></div>
+<div class="glow glow2"></div>
 
-<div class="wrap">
+<div class="inner">
 
-  <header class="header">
+  <div class="header">
     <div class="brand">
       <div class="logo">C</div>
       <div class="brand-name">COLOR <span>SUPPORT</span></div>
     </div>
     <div class="age">18+ ONLY</div>
-  </header>
+  </div>
 
-  <main class="hero">
+  <div class="hero">
 
     <div class="badge">
       <span class="dot"></span>
@@ -251,25 +309,25 @@
       <span>Explore Your Options.</span>
     </h1>
 
-    <p class="description">
+    <p class="desc">
       Color Trading mein loss hua hai?
       Apni query share karein aur available
-      account support options ke baare mein information paayein.
+      account support options ke baare mein jaaniye.
     </p>
 
     <div class="features">
       <div class="feature"><span>✦</span> Account Queries</div>
-      <div class="feature"><span>✦</span> Support Assistance</div>
-      <div class="feature"><span>✦</span> Process Information</div>
+      <div class="feature"><span>✦</span> Support</div>
+      <div class="feature"><span>✦</span> Information</div>
     </div>
 
-    <a class="whatsapp"
+    <a class="wa"
        href="https://wa.me/12496995236"
        target="_blank"
        rel="noopener noreferrer">
 
       <svg viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 2a10 10 0 0 0-8.63 15.04L2 22l5.13-1.35A10 10 0 1 0 12 2zm0 18.2a8.17 8.17 0 0 1-4.16-1.14l-.3-.18-3.05.8.81-2.97-.2-.31A8.2 8.2 0 1 1 12 20.2zm4.5-6.15c-.25-.13-1.48-.73-1.71-.81-.23-.09-.4-.13-.57.13-.17.25-.65.81-.8.98-.15.17-.3.19-.56.06-.25-.13-1.06-.39-2.02-1.24-.75-.66-1.25-1.48-1.4-1.73-.15-.25-.02-.39.11-.52.12-.11.25-.3.38-.45.13-.15.17-.25.25-.42.08-.17.04-.32-.02-.45-.06-.13-.57-1.37-.78-1.87-.2-.48-.41-.42-.57-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1s.9 2.44 1.02 2.61c.13.17 1.77 2.7 4.29 3.79.6.26 1.07.42 1.43.54.6.19 1.15.16 1.59.1.49-.07 1.48-.6 1.69-1.19.21-.58.21-1.08.15-1.19-.06-.1-.23-.16-.48-.29z"/>
+        <path d="M12 2a10 10 0 0 0-8.63 15.04L2 22l5.13-1.35A10 10 0 1 0 12 2zm0 18.2a8.17 8.17 0 0 1-4.16-1.14l-.3-.18-3.05.8.81-2.97-.2-.31A8.2 8.2 0 1 1 12 20.2z"/>
       </svg>
 
       CHAT ON WHATSAPP →
@@ -278,28 +336,18 @@
     <div class="trust">
       <div>✓ <span>18+</span> Adults Only</div>
       <div>✓ Risk Awareness</div>
-      <div>✓ No Guaranteed Returns</div>
     </div>
 
-  </main>
+  </div>
 
-  <footer class="bottom">
-
-    <div class="footer-brand">
-      COLOR <span>SUPPORT</span>
-    </div>
-
+  <div class="footer">
     <strong>IMPORTANT NOTICE – 18+</strong><br>
-
     Trading involves financial risk. Loss recovery is not guaranteed.
-    No fixed profit or returns are promised. Never share OTP, PIN,
-    passwords or banking credentials.
-
+    No fixed profit or returns are promised. Never share OTP, PIN
+    or passwords.
     <br><br>
-    Independent support enquiry page. Not affiliated with a trading
-    platform unless expressly authorized.
-
-  </footer>
+    Independent support enquiry page.
+  </div>
 
 </div>
 </div>
