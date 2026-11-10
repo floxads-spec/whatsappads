@@ -1,67 +1,58 @@
 
 <div id="color-mobile">
-
 <style>
-html, body {
-  margin:0 !important;
-  padding:0 !important;
-  width:100% !important;
-  min-height:100% !important;
-  background:#080b10 !important;
-  overflow-x:hidden !important;
+html,body{
+  margin:0!important;
+  padding:0!important;
+  width:100%!important;
+  min-height:100%!important;
+  background:#080b10!important;
+  overflow-x:hidden!important;
 }
-
-#page, #content, .site, .site-content,
-.content-area, .site-main, .entry-content,
-.wp-site-blocks, .dslc-main {
-  background:#080b10 !important;
-  margin:0 !important;
-  padding:0 !important;
-  max-width:100% !important;
-  width:100% !important;
+#page,#content,.site,.site-content,.content-area,
+.site-main,.entry-content,.wp-site-blocks,.dslc-main{
+  margin:0!important;
+  padding:0!important;
+  width:100%!important;
+  max-width:100%!important;
+  background:#080b10!important;
 }
-
-#color-mobile {
-  width:100vw !important;
-  max-width:none !important;
-  min-width:0 !important;
+#color-mobile,
+#color-mobile *{
+  box-sizing:border-box!important;
+}
+#color-mobile{
+  position:relative;
+  isolation:isolate;
+  width:100vw!important;
+  max-width:none!important;
   min-height:100vh;
   min-height:100dvh;
-  margin:0 0 0 calc(50% - 50vw) !important;
-  padding:0 !important;
-  position:relative;
-  overflow:hidden !important;
-  box-sizing:border-box !important;
-  background:#080b10;
+  margin-left:calc(50% - 50vw)!important;
+  padding:0!important;
+  overflow:hidden!important;
+  background:#080b10!important;
   color:#fff;
   font-family:Arial,Helvetica,sans-serif;
-  border-radius:0 !important;
-  isolation:isolate;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
-
-#color-mobile *,
-#color-mobile *:before,
-#color-mobile *:after {
-  box-sizing:border-box !important;
-}
-
-#color-mobile .bg {
+#color-mobile .bg{
   position:absolute;
   inset:0;
   z-index:-2;
   background:
-    radial-gradient(circle at 10% 20%,#c99b3035,transparent 40%),
-    radial-gradient(circle at 90% 80%,#12b96b25,transparent 40%),
+    radial-gradient(circle at 10% 15%,#c99b3035,transparent 38%),
+    radial-gradient(circle at 90% 85%,#12b96b25,transparent 40%),
     linear-gradient(145deg,#090d12,#151b20,#080b10);
   background-size:200% 200%;
   animation:cm-bg 12s ease infinite alternate;
 }
-
-@keyframes cm-bg {
-  to {background-position:100% 100%}
+@keyframes cm-bg{
+  to{background-position:100% 100%}
 }
-
-#color-mobile .glow {
+#color-mobile .glow{
   position:absolute;
   width:140px;
   height:140px;
@@ -71,47 +62,40 @@ html, body {
   z-index:-1;
   pointer-events:none;
 }
-
-#color-mobile .glow1 {
+#color-mobile .glow1{
   background:#f4c542;
   top:100px;
   left:-70px;
 }
-
-#color-mobile .glow2 {
+#color-mobile .glow2{
   background:#20d879;
   bottom:100px;
   right:-70px;
 }
-
-#color-mobile .inner {
-  width:100% !important;
-  max-width:100% !important;
-  padding:20px 16px 25px !important;
-  margin:0 auto !important;
+#color-mobile .inner{
+  width:100%;
+  max-width:430px;
+  padding:22px 17px 24px;
+  margin:auto;
 }
-
-#color-mobile .header {
+#color-mobile .header{
   display:flex;
   justify-content:space-between;
   align-items:center;
   gap:8px;
-  width:100%;
-  padding-bottom:16px;
+  padding-bottom:15px;
   border-bottom:1px solid #ffffff20;
 }
-
-#color-mobile .brand {
+#color-mobile .brand{
   display:flex;
   align-items:center;
   gap:9px;
   min-width:0;
 }
-
-#color-mobile .logo {
-  width:39px;
-  height:39px;
-  min-width:39px;
+#color-mobile .logo{
+  width:38px;
+  height:38px;
+  min-width:38px;
   display:grid;
   place-items:center;
   border-radius:10px;
@@ -120,19 +104,16 @@ html, body {
   font-size:22px;
   font-weight:900;
 }
-
-#color-mobile .brand-name {
-  font-size:clamp(12px,3.8vw,17px);
+#color-mobile .brand-name{
+  font-size:14px;
   font-weight:900;
   letter-spacing:.5px;
   white-space:nowrap;
 }
-
-#color-mobile .brand-name span {
+#color-mobile .brand-name span{
   color:#f4c542;
 }
-
-#color-mobile .age {
+#color-mobile .age{
   padding:6px 9px;
   border:1px solid #f4c54280;
   border-radius:30px;
@@ -141,20 +122,16 @@ html, body {
   font-weight:800;
   white-space:nowrap;
 }
-
-#color-mobile .hero {
+#color-mobile .hero{
   text-align:center;
-  padding:65px 0 20px;
-  width:100%;
+  padding:52px 0 10px;
   animation:cm-show 1s ease both;
 }
-
-@keyframes cm-show {
-  from {opacity:0;transform:translateY(15px)}
-  to {opacity:1;transform:translateY(0)}
+@keyframes cm-show{
+  from{opacity:0;transform:translateY(15px)}
+  to{opacity:1;transform:translateY(0)}
 }
-
-#color-mobile .badge {
+#color-mobile .badge{
   display:inline-flex;
   align-items:center;
   gap:7px;
@@ -167,8 +144,7 @@ html, body {
   font-weight:800;
   letter-spacing:1px;
 }
-
-#color-mobile .dot {
+#color-mobile .dot{
   height:7px;
   width:7px;
   border-radius:50%;
@@ -176,44 +152,38 @@ html, body {
   box-shadow:0 0 10px #20d879;
   animation:cm-pulse 1.5s infinite;
 }
-
-@keyframes cm-pulse {
-  50% {opacity:.3}
+@keyframes cm-pulse{
+  50%{opacity:.3}
 }
-
-#color-mobile h1 {
+#color-mobile h1{
   width:100%;
-  font-size:clamp(32px,8.5vw,56px) !important;
-  line-height:1.16 !important;
-  letter-spacing:-1.3px !important;
-  font-weight:900 !important;
-  color:#fff !important;
-  margin:24px 0 16px !important;
-  padding:0 !important;
+  font-size:clamp(32px,9vw,42px)!important;
+  line-height:1.15!important;
+  letter-spacing:-1.3px!important;
+  font-weight:900!important;
+  color:#fff!important;
+  margin:23px 0 15px!important;
+  padding:0!important;
 }
-
-#color-mobile h1 span {
-  color:#f4c542 !important;
+#color-mobile h1 span{
+  color:#f4c542!important;
 }
-
-#color-mobile .desc {
+#color-mobile .desc{
   color:#b6c0c9;
-  font-size:14px;
+  font-size:13px;
   line-height:1.8;
-  max-width:450px;
+  max-width:350px;
   margin:0 auto;
 }
-
-#color-mobile .features {
+#color-mobile .features{
   display:flex;
   justify-content:center;
   align-items:center;
   flex-wrap:wrap;
   gap:8px;
-  margin:24px 0;
+  margin:22px 0;
 }
-
-#color-mobile .feature {
+#color-mobile .feature{
   border:1px solid #ffffff20;
   background:#ffffff09;
   border-radius:7px;
@@ -222,142 +192,120 @@ html, body {
   font-size:10px;
   white-space:nowrap;
 }
-
-#color-mobile .feature span {
+#color-mobile .feature span{
   color:#f4c542;
 }
-
-/* FIXED WHATSAPP BUTTON */
-#color-mobile a.wa {
-  display:flex !important;
-  width:100% !important;
-  max-width:390px !important;
-  min-height:58px !important;
-  margin:25px auto 0 !important;
-  padding:15px 18px !important;
-
-  align-items:center !important;
-  justify-content:center !important;
-  gap:11px !important;
-
-  border:0 !important;
-  border-radius:12px !important;
-  background:linear-gradient(135deg,#39e991,#12bd6d) !important;
-
-  color:#04160c !important;
-  font-family:Arial,Helvetica,sans-serif !important;
-  font-size:14px !important;
-  font-weight:900 !important;
-  line-height:1.2 !important;
-  letter-spacing:.5px !important;
-  text-align:center !important;
-  text-decoration:none !important;
-  text-transform:uppercase !important;
-
-  box-shadow:0 5px 25px #20d87935 !important;
-  animation:cm-attention 3s infinite;
-  transition:transform .25s ease,box-shadow .25s ease;
+/* WHATSAPP BUTTON */
+#color-mobile .wa{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:10px!important;
+  width:100%!important;
+  max-width:100%!important;
+  min-height:58px!important;
+  margin:23px auto 0!important;
+  padding:15px 12px!important;
+  border:0!important;
+  border-radius:11px!important;
+  background:linear-gradient(135deg,#39e991,#12bd6d)!important;
+  color:#04160c!important;
+  font-size:13px!important;
+  font-weight:900!important;
+  letter-spacing:.4px!important;
+  line-height:1.2!important;
+  text-align:center!important;
+  text-decoration:none!important;
+  box-shadow:0 5px 25px #20d87935!important;
   cursor:pointer;
+  animation:cm-attention 3s infinite;
 }
-
-#color-mobile a.wa:hover {
-  color:#04160c !important;
-  background:linear-gradient(135deg,#65f5aa,#20d879) !important;
-  transform:translateY(-3px);
-  text-decoration:none !important;
-}
-
-#color-mobile a.wa:visited,
-#color-mobile a.wa:active,
-#color-mobile a.wa:focus {
-  color:#04160c !important;
-  text-decoration:none !important;
-}
-
-#color-mobile .wa svg {
-  width:23px !important;
-  height:23px !important;
+#color-mobile .wa svg{
+  width:23px!important;
+  height:23px!important;
   min-width:23px;
   display:block;
   flex-shrink:0;
 }
-
-@keyframes cm-attention {
-  0%,80%,100% {box-shadow:0 5px 20px #20d87925}
-  90% {box-shadow:0 5px 28px #20d87975}
+#color-mobile .wa:visited,
+#color-mobile .wa:hover,
+#color-mobile .wa:focus{
+  color:#04160c!important;
+  text-decoration:none!important;
 }
-
-#color-mobile .trust {
+@keyframes cm-attention{
+  0%,80%,100%{box-shadow:0 5px 20px #20d87925}
+  90%{box-shadow:0 5px 28px #20d87975}
+}
+#color-mobile .trust{
   display:flex;
   justify-content:center;
   flex-wrap:wrap;
   gap:12px;
-  margin-top:23px;
+  margin-top:20px;
   color:#aab4bd;
   font-size:10px;
 }
-
-#color-mobile .trust span {
+#color-mobile .trust span{
   color:#f4c542;
 }
-
-#color-mobile .footer {
-  margin-top:45px;
-  padding-top:17px;
+#color-mobile .footer{
+  margin-top:34px;
+  padding-top:15px;
   border-top:1px solid #ffffff1c;
   text-align:center;
   font-size:10px;
   line-height:1.8;
   color:#929da6;
 }
-
-#color-mobile .footer strong {
+#color-mobile .footer strong{
   color:#f4c542;
 }
-
-@media(max-width:380px) {
-  #color-mobile .inner {
-    padding:17px 12px 22px !important;
+/* SMALL PHONES */
+@media(max-width:380px){
+  #color-mobile .inner{
+    padding:18px 13px 20px;
   }
-
-  #color-mobile .hero {
-    padding-top:55px;
+  #color-mobile .hero{
+    padding-top:38px;
   }
-
-  #color-mobile h1 {
-    font-size:32px !important;
+  #color-mobile h1{
+    font-size:31px!important;
   }
-
-  #color-mobile .feature {
+  #color-mobile .feature{
     font-size:9px;
     padding:7px;
   }
-
-  #color-mobile .brand-name {
+  #color-mobile .brand-name{
     font-size:12px;
   }
-
-  #color-mobile a.wa {
-    font-size:12px !important;
+  #color-mobile .footer{
+    margin-top:25px;
   }
 }
-
-@media(min-width:700px) {
-  #color-mobile .inner {
-    max-width:720px !important;
-    padding:30px 25px 35px !important;
+/* SHORT PHONE SCREENS */
+@media(max-height:700px){
+  #color-mobile .inner{
+    padding-top:13px;
+    padding-bottom:13px;
   }
-
-  #color-mobile .hero {
-    padding-top:85px;
+  #color-mobile .hero{
+    padding-top:24px;
+  }
+  #color-mobile h1{
+    margin-top:17px!important;
+  }
+  #color-mobile .features{
+    margin:15px 0;
+  }
+  #color-mobile .footer{
+    margin-top:20px;
   }
 }
-
-@media(prefers-reduced-motion:reduce) {
-  #color-mobile *,
-  #color-mobile *:before {
-    animation:none !important;
-    transition:none !important;
+@media(prefers-reduced-motion:reduce){
+  #color-mobile *{
+    animation:none!important;
+    transition:none!important;
   }
 }
 </style>
@@ -391,7 +339,7 @@ html, body {
     <p class="desc">
       Color Trading mein loss hua hai?
       Apni query share karein aur available
-      account support options ke baare mein jaaniye.
+      account support information ke baare mein jaaniye.
     </p>
 
     <div class="features">
@@ -400,7 +348,6 @@ html, body {
       <div class="feature"><span>✦</span> Information</div>
     </div>
 
-    <!-- WHATSAPP BUTTON -->
     <a class="wa"
        href="https://wa.me/12496995236?text=Hello%2C%20I%20need%20assistance%20regarding%20my%20colour%20trading%20losses.%20Please%20share%20the%20available%20information."
        target="_blank"
